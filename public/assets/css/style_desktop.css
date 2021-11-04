@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Londrina+Solid&family=Roboto&family=Skranji&display=swap');
+
+:root
+{
+    --dark-text: #000000;
+    --light-text: #FFFFFF;
+    --tutorial-text:#422D00;
+    --green-troop: #5CFF33;
+    --red-troop:#BE1818;
+    --yellow-troop:#FFD600;
+    --font-troop:#EEAC99; 
+    --background-score:#5C5C5C;
+    --background-nbScore:#242424;
+}
+ 
