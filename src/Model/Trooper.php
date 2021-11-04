@@ -1,6 +1,6 @@
 <?php
 
-namespace App\model;
+namespace App\Model;
 
 //"Trooper" class will be used to instantiate our different fighters and solve the fight between them
 class Trooper
@@ -15,14 +15,14 @@ class Trooper
     // type, player and vigor values from database.
     private int $type;
     private bool $player;
-    private int $vigor = 5;
+    private int $vigor;
     private string $image;
 
     // constructor
-    public function __construct($type, $player)
+    public function __construct($type, $vigor = 5)
     {
         $this->type = $type;
-        $this->player = $player;
+        $this->vigor = $vigor;
         //switch to display the correct picture, according to type of fighter
         switch ($type) {
             case 1:
