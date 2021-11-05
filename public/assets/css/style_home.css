@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Londrina+Solid&family=Roboto&family=Skranji&display=swap');
+
+:root
+{
+    --dark-text: #000000;
+    --light-text: #FFFFFF;
+    --tutorial-text:#422D00;
+    --green-troop: #5CFF33;
+    --red-troop:#BE1818;
+    --yellow-troop:#FFD600;
+    --font-troop:#EEAC99; 
+    --background-score:#5C5C5C;
+    --background-nbScore:#242424;
+    --background-buttons:#EDEDED;
+}
+
+body {
+    background-image: url("/assets/images/mobile/home_background.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+
+/*HOME NAV STYLE FOR MOBILE*/
+
+nav {
+    padding: 1em 1em 0em 1em;
+    display: flex;
+    justify-content: space-between ;
+}
+
+
+
+.questionmark-button, .music-button {
+    width: 2.5em;
+    height: 2.5em;
+    border: solid var(--background-nbScore);
+    border-radius: 0.6em;
+    background-color: var(--background-buttons);
+}
+
+.questionmark-icon {
+    padding: 0.4em 0.2em 0.2em 0.7em;
+}
+
+.music-icon {
+    padding: 0.5em 0.2em 0.2em 0.5em;
+}
+
+/* MAIN PART STYLE FOR MOBILE*/
+
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+.castle {
+    display: block;
+    margin-left: 1.6em;
+    margin-right: auto;
+}
+
+ul{
+    display: flex;
+    justify-content: space-evenly;
+    padding-inline-start: unset;
+    margin-top: 1.2em;
+    margin-bottom: 1.2em;
+}
+
+ul li {
+    list-style-type: none;
+    width: 5em;
+    border: solid var(--background-nbScore);
+    border-radius: 0.3em;
+    background-color: var(--background-buttons);
+    text-align: center;
+    padding: 0.4em 1em 0.3em 1em;
+}
+
+ul li a{
+    text-decoration: none;
+    color: var(--dark-text);
+    font-family: 'Skranji';
+    font-size: 1em;
+}
+
+.logo {
+    display: block;
+    margin: auto auto 1em auto;
+}
