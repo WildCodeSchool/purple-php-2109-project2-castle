@@ -7,7 +7,7 @@ Result of fight
 <section class="sky">
     <img class="castle" src="assets/images/mobile/battle_castle.png" alt="Castle open door">
     <div class="backgroundRound">
-        <h1 id="timer"></h1>
+        <h1 id="timer">3</h1>
     </div>
 </section>
 <section class="grass">
@@ -33,7 +33,7 @@ Result of fight
             <p><img src={{ session.saveEnemy.imgVigor }} alt="asset vigor enemy {{ session.saveEnemy.vigor }} / 5"></p>
         </div>
     </div>
-    <P class="score"> Score <br>{{session.score}}</P>
+    <h2 class="score"> Score <br>{{session.score}}</h2>
 </section>
 {% endblock %}
 {% block javascript %}
