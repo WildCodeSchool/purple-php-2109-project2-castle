@@ -1,85 +1,89 @@
 @import url('https://fonts.googleapis.com/css2?family=Londrina+Solid&family=Roboto&family=Skranji&display=swap');
 
-:root
-{
-    --dark-text: #000000;
-    --light-text: #FFFFFF;
-    --tutorial-text:#422D00;
-    --green-troop: #5CFF33;
-    --red-troop:#BE1818;
-    --yellow-troop:#FFD600;
-    --font-troop:#EEAC99; 
-    --background-score:#5C5C5C;
-    --background-nbScore:#242424;
-    --background-buttons:#EDEDED;
-}
-
 body {
     background-image: url("/assets/images/mobile/home_background.png");
     background-repeat: no-repeat;
     background-size: cover;
+    margin: 0;
 }
 
-
-
-/*HOME NAV STYLE FOR MOBILE*/
-
-nav {
-    padding: 1em 1em 0em 1em;
-    display: flex;
-    justify-content: space-between ;
+@media only screen and (min-width : 530px) {
+    
+    body {
+        background-image: url("/assets/images/desktop/home_background.png");
+    }
 }
-
-
-
-.questionmark-button, .music-button {
-    width: 2.5em;
-    height: 2.5em;
-    border: solid var(--background-nbScore);
-    border-radius: 0.6em;
-    background-color: var(--background-buttons);
-}
-
-.questionmark-icon {
-    padding: 0.4em 0.2em 0.2em 0.7em;
-}
-
-.music-icon {
-    padding: 0.5em 0.2em 0.2em 0.5em;
-}
-
-/* MAIN PART STYLE FOR MOBILE*/
 
 main {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    width: 100%;
+    height: 100%;
+    grid-template-areas: "castle castle" "defend-button tutorial-button" "logo logo";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 6fr 1fr 2fr;
+}
+
+@media only screen and (min-width : 530px) {
+    
+    main {
+        grid-template-areas: "logo logo" "castle defend-button" "castle tutorial-button" "castle camp";
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 2fr 1fr 1fr 3fr;
+    }
 }
 
 .castle {
-    display: block;
-    margin-left: 1.6em;
-    margin-right: auto;
+    grid-area: castle;
+    justify-self: center;
+    margin-bottom: 1.5em;
 }
 
-ul{
-    display: flex;
-    justify-content: space-evenly;
-    padding-inline-start: unset;
-    margin-top: 1.2em;
-    margin-bottom: 1.2em;
+@media only screen and (min-width : 530px) {
+    .castle {
+        margin-right: 3em;
+        padding-bottom: 3em;
+    }
 }
 
-ul li {
-    list-style-type: none;
+.defend-button {
+    grid-area: defend-button;
+}
+
+@media only screen and (min-width : 530px) {
+
+    .defend-button {
+        align-self: end ;
+    }
+}
+
+.tutorial-button {
+    grid-area: tutorial-button;
+}
+
+@media only screen and (min-width : 530px) {
+    .tutorial-button {
+        margin-top: 2em;
+    }
+}
+
+.defend-button, .tutorial-button {
     width: 5em;
+    height: 1.5em;
+    justify-self: center;
     border: solid var(--background-nbScore);
     border-radius: 0.3em;
     background-color: var(--background-buttons);
     text-align: center;
-    padding: 0.4em 1em 0.3em 1em;
+    padding: 0.4em 1em 0.2em 1em;
 }
 
-ul li a{
+@media only screen and (min-width : 530px) {
+    .defend-button, .tutorial-button {
+        width: 8em;
+    }
+}
+
+.defend-button a, .tutorial-button a {
     text-decoration: none;
     color: var(--dark-text);
     font-family: 'Skranji';
@@ -87,6 +91,17 @@ ul li a{
 }
 
 .logo {
-    display: block;
-    margin: auto auto 1em auto;
+    grid-area: logo;
+    justify-self: center;
+}
+
+.camp {
+    display: none;
+}
+
+@media only screen and (min-width : 530px) {
+    .camp {
+        display: contents;
+        justify-self: center;
+    }
 }
