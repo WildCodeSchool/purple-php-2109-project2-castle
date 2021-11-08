@@ -10,6 +10,6 @@ return [
     '' => ['HomeController', 'index',],
     //'tutorial' => ['AnnexController', 'tutorial',],
     //'legalnotice' => ['AnnexController', 'legalNotice',],
-    'getready' => ['FightController', 'getReady',],
-    'fight' => ['FightController', 'fight', ['id'],],
+    'getready' => ['FightController', 'getTroops',],
+    'result' => ['FightController', 'result', ['id'],],
 ];
