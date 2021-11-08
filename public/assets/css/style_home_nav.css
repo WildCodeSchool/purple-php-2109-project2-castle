@@ -1,0 +1,36 @@
+
+
+nav {
+    padding: 1em 1em 0em 1em;
+    display: flex;
+    justify-content: space-between ;
+}
+
+@media only screen and (min-width : 530px) {
+
+    nav {
+        justify-content: flex-end;
+    }
+}
+
+.questionmark-button, .music-button {
+    width: 2.5em;
+    height: 2.5em;
+    border: solid var(--background-nbScore);
+    border-radius: 0.6em;
+    background-color: var(--background-buttons);
+}
+
+@media only screen and (min-width : 530px) {
+    .questionmark-button {
+        margin-right: 1.5em;
+    }
+}
+
+.questionmark-icon {
+    padding: 0.4em 0.2em 0.2em 0.7em;
+}
+
+.music-icon {
+    padding: 0.5em 0.2em 0.2em 0.5em;
+}
