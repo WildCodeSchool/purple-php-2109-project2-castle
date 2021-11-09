@@ -1,7 +1,7 @@
 CREATE TABLE `game` (
   `id` INT NOT NULL AUTO_INCREMENT,
-  `score` INT,
-  `round` INT,
+  `score` INT NOT NULL,
+  `round` INT NOT NULL,
   PRIMARY KEY (`id`));
 
 INSERT INTO `game` (`score`, `round`) VALUES (200,1);
@@ -9,8 +9,8 @@ INSERT INTO `game` (`score`, `round`) VALUES (200,1);
 
 CREATE TABLE `trooper` (
   `id` INT NOT NULL AUTO_INCREMENT,
-  `type` INT,
-  `vigor` INT,
+  `type` INT NOT NULL,
+  `vigor` INT NOT NULL,
   PRIMARY KEY (`id`));
 
 INSERT INTO `trooper` (`type`, `vigor`) VALUES (1, 5);
