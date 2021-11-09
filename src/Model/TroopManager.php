@@ -58,37 +58,34 @@ class TroopManager extends AbstractManager
 
     /**
      * Maj des different point de vigor en fonction de qui est utilisé
+     * et save in bdd
      */
     public function updateVigor(int $id): void
     {
-        switch ($id) {
-            case 0:
-                $vigor0 = $_SESSION['troops']['0']->getVigor();
-                $vigor0 = $this->lessVigor($vigor0);
-                $vigor1 = $_SESSION['troops']['1']->getVigor();
-                $vigor1 = $this->moreVigor($vigor1);
-                $vigor2 = $_SESSION['troops']['2']->getVigor();
-                $vigor2 = $this->moreVigor($vigor2);
-                break;
-            case 1:
-                $vigor0 = $_SESSION['troops']['0']->getVigor();
-                $vigor0 = $this->moreVigor($vigor0);
-                $vigor1 = $_SESSION['troops']['1']->getVigor();
-                $vigor1 = $this->lessVigor($vigor1);
-                $vigor2 = $_SESSION['troops']['2']->getVigor();
-                $vigor2 = $this->moreVigor($vigor2);
-                break;
-            case 2:
-                $vigor0 = $_SESSION['troops']['0']->getVigor();
-                $vigor0 = $this->moreVigor($vigor0);
-                $vigor1 = $_SESSION['troops']['1']->getVigor();
-                $vigor1 = $this->moreVigor($vigor1);
-                $vigor2 = $_SESSION['troops']['2']->getVigor();
-                $vigor2 = $this->lessVigor($vigor2);
-                break;
+        if (isset($_SESSION['troops'])) {
+            $vigor0 = $_SESSION['troops']['0']->getVigor();
+            $vigor1 = $_SESSION['troops']['1']->getVigor();
+            $vigor2 = $_SESSION['troops']['2']->getVigor();
+            switch ($id) {
+                case 0:
+                    $vigor0 = $this->lessVigor($vigor0);
+                    $vigor1 = $this->moreVigor($vigor1);
+                    $vigor2 = $this->moreVigor($vigor2);
+                    break;
+                case 1:
+                    $vigor0 = $this->moreVigor($vigor0);
+                    $vigor1 = $this->lessVigor($vigor1);
+                    $vigor2 = $this->moreVigor($vigor2);
+                    break;
+                case 2:
+                    $vigor0 = $this->moreVigor($vigor0);
+                    $vigor1 = $this->moreVigor($vigor1);
+                    $vigor2 = $this->lessVigor($vigor2);
+                    break;
+            }
+            $this->setVigor(1, $vigor0);
+            $this->setVigor(2, $vigor1);
+            $this->setVigor(3, $vigor2);
         }
-        $this->setVigor(1, $vigor0);
-        $this->setVigor(2, $vigor1);
-        $this->setVigor(3, $vigor2);
     }
 }

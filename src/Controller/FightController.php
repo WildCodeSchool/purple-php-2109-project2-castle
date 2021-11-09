@@ -67,7 +67,7 @@ class FightController extends AbstractController
         $saveRound->setRound($round);
         //mise a jour de la vigor des troupes et envoie dans la BDD
         $majVigor = new TroopManager();
-        $majVigor->majVigor($id);
+        $majVigor->updateVigor($id);
         // return les element sur la vue result
         return $this->twig->render('Fight/fight.html.twig', [
             'trooperPlayer' => $trooperPlayer,
@@ -76,6 +76,4 @@ class FightController extends AbstractController
             'session' => $_SESSION,
         ]);
     }
-
-    
 }
