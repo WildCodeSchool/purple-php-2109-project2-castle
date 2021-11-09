@@ -39,7 +39,7 @@ class FightController extends AbstractController
      * mise a jour de de la base de donné
      * renvoi des info vers la vue result
      */
-    public function result($id)
+    public function fightOutcome($id)
     {
         //verifie la coherance de $id
         if ($id != 1 && $id != 2 && $id != 3) {
@@ -69,11 +69,13 @@ class FightController extends AbstractController
         $majVigor = new TroopManager();
         $majVigor->majVigor($id);
         // return les element sur la vue result
-        return $this->twig->render('Fight/result.html.twig', [
+        return $this->twig->render('Fight/fight.html.twig', [
             'trooperPlayer' => $trooperPlayer,
             'result' => $result,
             'newScore' => $newScore,
             'session' => $_SESSION,
         ]);
     }
+
+    
 }

@@ -15,6 +15,7 @@ class TroopManager extends AbstractManager
         $statement->setFetchMode(PDO::FETCH_CLASS, Trooper::class, []);
         return $statement->fetchAll();
     }
+
     /* cretation de la troop enemy*/
     public function selectTroopEnemy(int $typeEnemy, int $vigorEnemey): Trooper
     {
@@ -23,47 +24,7 @@ class TroopManager extends AbstractManager
         $enemy->setVigor($vigorEnemey);
         return $enemy;
     }
-    /**
-     * Maj des different point de vigor en fonction de qui est utilisé
-     */
-    public function majVigor(int $id): void
-    {
-        switch ($id) {
-            case 0:
-                $vigor0 = $_SESSION['troops']['0']->getVigor();
-                $vigor0 = $this->lessVigor($vigor0);
-                $this->setVigor(1, $vigor0);
-                $vigor1 = $_SESSION['troops']['1']->getVigor();
-                $vigor1 = $this->moreVigor($vigor1);
-                $this->setVigor(2, $vigor1);
-                $vigor2 = $_SESSION['troops']['2']->getVigor();
-                $vigor2 = $this->moreVigor($vigor2);
-                $this->setVigor(3, $vigor2);
-                break;
-            case 1:
-                $vigor0 = $_SESSION['troops']['0']->getVigor();
-                $vigor0 = $this->moreVigor($vigor0);
-                $this->setVigor(1, $vigor0);
-                $vigor1 = $_SESSION['troops']['1']->getVigor();
-                $vigor1 = $this->lessVigor($vigor1);
-                $this->setVigor(2, $vigor1);
-                $vigor2 = $_SESSION['troops']['2']->getVigor();
-                $vigor2 = $this->moreVigor($vigor2);
-                $this->setVigor(3, $vigor2);
-                break;
-            case 2:
-                $vigor0 = $_SESSION['troops']['0']->getVigor();
-                $vigor0 = $this->moreVigor($vigor0);
-                $this->setVigor(1, $vigor0);
-                $vigor1 = $_SESSION['troops']['1']->getVigor();
-                $vigor1 = $this->moreVigor($vigor1);
-                $this->setVigor(2, $vigor1);
-                $vigor2 = $_SESSION['troops']['2']->getVigor();
-                $vigor2 = $this->lessVigor($vigor2);
-                $this->setVigor(3, $vigor2);
-                break;
-        }
-    }
+
     /* calcul l'augmentation de la vigeur */
     public function moreVigor(int $vigor): int
     {
@@ -73,6 +34,7 @@ class TroopManager extends AbstractManager
         }
         return $vigor;
     }
+
     /* calcul la diminution de la vigeur */
     public function lessVigor(int $vigor): int
     {
@@ -84,13 +46,49 @@ class TroopManager extends AbstractManager
     }
 
     /**
-     * UPDATE VIGOR IN DATABASE
-     */
+    * UPDATE VIGOR IN DATABASE
+    */
     public function setVigor(int $type, int $vigor): void
     {
         $statement = $this->pdo->prepare("UPDATE trooper SET vigor = :vigor WHERE type = :type");
         $statement->bindValue(':type', $type, \PDO::PARAM_INT);
         $statement->bindValue(':vigor', $vigor, \PDO::PARAM_INT);
         $statement->execute();
+    }
+
+    /**
+     * Maj des different point de vigor en fonction de qui est utilisé
+     */
+    public function updateVigor(int $id): void
+    {
+        switch ($id) {
+            case 0:
+                $vigor0 = $_SESSION['troops']['0']->getVigor();
+                $vigor0 = $this->lessVigor($vigor0);
+                $vigor1 = $_SESSION['troops']['1']->getVigor();
+                $vigor1 = $this->moreVigor($vigor1);
+                $vigor2 = $_SESSION['troops']['2']->getVigor();
+                $vigor2 = $this->moreVigor($vigor2);
+                break;
+            case 1:
+                $vigor0 = $_SESSION['troops']['0']->getVigor();
+                $vigor0 = $this->moreVigor($vigor0);
+                $vigor1 = $_SESSION['troops']['1']->getVigor();
+                $vigor1 = $this->lessVigor($vigor1);
+                $vigor2 = $_SESSION['troops']['2']->getVigor();
+                $vigor2 = $this->moreVigor($vigor2);
+                break;
+            case 2:
+                $vigor0 = $_SESSION['troops']['0']->getVigor();
+                $vigor0 = $this->moreVigor($vigor0);
+                $vigor1 = $_SESSION['troops']['1']->getVigor();
+                $vigor1 = $this->moreVigor($vigor1);
+                $vigor2 = $_SESSION['troops']['2']->getVigor();
+                $vigor2 = $this->lessVigor($vigor2);
+                break;
+        }
+        $this->setVigor(1, $vigor0);
+        $this->setVigor(2, $vigor1);
+        $this->setVigor(3, $vigor2);
     }
 }
