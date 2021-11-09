@@ -1,5 +1,9 @@
 {% extends 'layout.html.twig' %}
 
+{% block stylesheet %}
+<link rel="stylesheet" href="/assets/css/get_ready.css">
+{% endblock %}
+
 {% block title %}
 Choice your troop
 {% endblock %}
@@ -24,7 +28,7 @@ Choice your troop
                     {% else %}
                 <p class="green">
                     {% endif %}
-                    <a href="result?id={{ troop.type }}"><img src={{ troop.image}} alt="asset troop "></a>
+                    <a href="fight?id={{ troop.type }}"><img src={{ troop.image}} alt="asset troop "></a>
                 </p>
                 <p><img src={{ troop.imgVigor }} alt="asset vigor troop {{ troop.vigor}} / 5 "></p>
             </div>
