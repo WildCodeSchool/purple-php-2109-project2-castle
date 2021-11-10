@@ -9,9 +9,9 @@ use App\Model\TroopManager;
 class FightController extends AbstractController
 {
     /**
-     * recovery of game info (score, round, trooper's player) 
+     * recovery of game info (score, round, trooper's player)
      * create ennemy troops
-     * storage before fight resolution in session 
+     * storage before fight resolution in session
      * return to the get_ready view
     */
     public function getTroops(): string
