@@ -6,25 +6,12 @@ nav {
     justify-content: space-between ;
 }
 
-@media only screen and (min-width : 530px) {
-
-    nav {
-        justify-content: flex-end;
-    }
-}
-
 .questionmark-button, .music-button {
     width: 2.5em;
     height: 2.5em;
     border: solid var(--background-nbScore);
     border-radius: 0.6em;
     background-color: var(--background-buttons);
-}
-
-@media only screen and (min-width : 530px) {
-    .questionmark-button {
-        margin-right: 1.5em;
-    }
 }
 
 .questionmark-icon {
@@ -35,6 +22,7 @@ nav {
     padding: 0.5em 0.2em 0.2em 0.5em;
 }
 
+/*background for mobile, portrait*/
 body {
     background-image: url("/assets/images/mobile/home_background.png");
     height: 100vh;
@@ -43,29 +31,12 @@ body {
     margin: 0;
 }
 
-@media only screen and (min-width : 530px) {
-    
-    body {
-        background-image: url("/assets/images/desktop/home_background.png");
-        background-size: cover;
-    }
-}
-
 main {
     display: grid;
     height: 90vh;
-    grid-template-areas: "castle castle" "defend-button tutorial-button" "logo logo";
+    grid-template-areas: "castle castle" "defend-button tutorial-button" "logo logo" "camp camp";
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 6fr 1fr 2fr;
-}
-
-@media only screen and (min-width : 530px) {
-    
-    main {
-        grid-template-areas: "logo logo" "castle defend-button" "castle tutorial-button" "castle camp";
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 2fr 1fr 1fr 3fr;
-    }
 }
 
 .castle {
@@ -74,35 +45,14 @@ main {
     align-self:flex-end;
     max-width: 100%;
     height: auto;
-
-}
-
-@media only screen and (min-width : 530px) {
-    .castle {
-        margin-right: 3em;
-        align-self: baseline;
-    }
 }
 
 .defend-button {
     grid-area: defend-button;
 }
 
-@media only screen and (min-width : 530px) {
-
-    .defend-button {
-        align-self: end ;
-    }
-}
-
 .tutorial-button {
     grid-area: tutorial-button;
-}
-
-@media only screen and (min-width : 530px) {
-    .tutorial-button {
-        align-self: center;
-    }
 }
 
 .defend-button, .tutorial-button {
@@ -117,16 +67,6 @@ main {
     padding: 0.4em 1em 0.2em 1em;
 }
 
-@media only screen and (min-width : 530px) {
-    .defend-button, .tutorial-button {
-        width: 8em;
-    }
-
-    .defend-button {
-        align-self: flex-end;
-    }
-}
-
 .defend-button a, .tutorial-button a {
     text-decoration: none;
     color: var(--dark-text);
@@ -139,21 +79,7 @@ main {
     place-self: center;
 }
 
+/*camp is displayed only for tablet portrait mode and desktop*/
 .camp {
-    display: none;;
-}
-
-@media only screen and (min-width : 530px) {
-    .camp {
-        grid-area: camp;
-        display: contents;
-        align-content: center;
-
-    }
-    
-    .camp img {
-        margin-top: 5em;
-        margin: auto 5em auto 5em;
-    
-    }
+    display: none;
 }
