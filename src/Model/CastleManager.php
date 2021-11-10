@@ -30,5 +30,4 @@ class CastleManager extends AbstractManager
         $statement->bindValue(':round', $round, \PDO::PARAM_INT);
         $statement->execute();
     }
-    
 }
