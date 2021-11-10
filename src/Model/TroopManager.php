@@ -16,7 +16,7 @@ class TroopManager extends AbstractManager
         return $statement->fetchAll();
     }
 
-    /* cretation de la troop enemy*/
+    /* create ennemy troop*/
     public function selectTroopEnemy(int $typeEnemy, int $vigorEnemey): Trooper
     {
         $enemy = new Trooper();
@@ -25,7 +25,7 @@ class TroopManager extends AbstractManager
         return $enemy;
     }
 
-    /* calcul l'augmentation de la vigeur */
+    /* calculation of the increase of the vigor */
     public function moreVigor(int $vigor): int
     {
         $vigor++;
@@ -35,7 +35,7 @@ class TroopManager extends AbstractManager
         return $vigor;
     }
 
-    /* calcul la diminution de la vigeur */
+    /* calculation of the decrease of the vigor */
     public function lessVigor(int $vigor): int
     {
         $vigor--;
@@ -57,8 +57,8 @@ class TroopManager extends AbstractManager
     }
 
     /**
-     * Maj des different point de vigor en fonction de qui est utilisé
-     * et save in bdd
+     * update of the different vigor points according to who is used
+     * save in database
      */
     public function updateVigor(int $id): void
     {
@@ -83,6 +83,7 @@ class TroopManager extends AbstractManager
                     $vigor2 = $this->lessVigor($vigor2);
                     break;
             }
+            // save in database
             $this->setVigor(1, $vigor0);
             $this->setVigor(2, $vigor1);
             $this->setVigor(3, $vigor2);

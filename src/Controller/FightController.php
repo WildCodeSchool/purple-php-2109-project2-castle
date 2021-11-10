@@ -9,25 +9,25 @@ use App\Model\TroopManager;
 class FightController extends AbstractController
 {
     /**
-     * show player and ennemy troops
-     * stocage avant la rolustion de combat
-     * recuperation des info de jeu (score, round)
-     * renvoi vers la vue get_ready
+     * recovery of game info (score, round, trooper's player) 
+     * create ennemy troops
+     * storage before fight resolution in session 
+     * return to the get_ready view
     */
     public function getTroops(): string
     {
         session_start();
-        // recuperation info de la partie
+        // recovery of game info (score, round)
         $gameInfo = new CastleManager();
         $game = $gameInfo->selectGame();
-        //recuperation des troupe joueur et creation troupe enemy
+        // recovery of player troop and creation of enemy troop
         $troopManager = new TroopManager();
         $troops = $troopManager->selectTroopPlayer();
         $enemy = $troopManager->selectTroopEnemy((rand(1, 3)), 5);
-        // pour stoker les troupes dans une session
+        // to stall troops in a session
         $session = new SessionManager();
         $_SESSION = $session->saveElement($enemy, $troops, $game);
-        //vers la vue get_ready
+        //return to view get_ready
         return $this->twig->render('Fight/get_ready.html.twig', [
             'troops' => $troops,
             'session' => $_SESSION,
@@ -35,40 +35,51 @@ class FightController extends AbstractController
         ]);
     }
     /**
-     * resolution du combat
-     * mise a jour de de la base de donné
-     * renvoi des info vers la vue result
+     * save castle data
+     */
+    private function saveCastle($newScore, $round): void
+    {
+        $save = new CastleManager();
+        $save->setRound($round);
+        $save->setScore($newScore);
+    }
+    /**
+     * Update and save vigor data
+     */
+    private function saveVigor($id): void
+    {
+        $updateVigor = new TroopManager();
+        $updateVigor->updateVigor($id);
+    }
+    /**
+     * resolution of the battle,
+     * calculation of the new score, round, vigor of the troops
+     * return to the fight.html.twig view
      */
     public function fightOutcome($id)
     {
-        //verifie la coherance de $id
+        //checks the coherence of $id
         if ($id != 1 && $id != 2 && $id != 3) {
             return $this->twig->render('Home/index.html.twig');
         }
         session_start();
-        // fait correspondre id du numero de type de troupe avec l'index du tableau
+        // match troop type number id with table index
         $id--;
-        //retourne nos données stokées dans la session
+        //returns our data stored in the session
         $trooperPlayer = $_SESSION['troops'][$id];
-        //resolution du combat
+        //resolution of the battle
         $result = $trooperPlayer->fight($_SESSION['saveEnemy']);
-        //calcul du nouveau score du chateau , impossible d'etre negatif
+        //calculation of the new score of the castle, impossible to be negative
         $newScore = intval($_SESSION['score']) + $result;
         if ($newScore < 0) {
             $newScore = 0;
         }
-        //envoyer le nouveau score dans la BDD
-        $saveScore = new CastleManager();
-        $saveScore->setScore($newScore);
-        //incremente le round
+        //increment the round, return new score and round in database
         $round = intval($_SESSION['round']) + 1;
-        //envoyer le nouveau round dans la BDD
-        $saveRound = new CastleManager();
-        $saveRound->setRound($round);
-        //mise a jour de la vigor des troupes et envoie dans la BDD
-        $majVigor = new TroopManager();
-        $majVigor->updateVigor($id);
-        // return les element sur la vue result
+        $this->saveCastle($newScore, $round);
+        //updating the vigor of the troops and sending them to the database
+        $this->saveVigor($id);
+        // return to the fight.html.twig view
         return $this->twig->render('Fight/fight.html.twig', [
             'trooperPlayer' => $trooperPlayer,
             'result' => $result,

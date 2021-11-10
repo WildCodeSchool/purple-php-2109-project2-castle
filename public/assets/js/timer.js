@@ -1,14 +1,14 @@
 /**
- * creer un timer pour gerer l'affichage de la bataille
+ * create a timer to manage the display of the battle
  */
 let time = 4;
-//selection des divers element qui vont etre modifier ou ajouté 
+//selection of the various elements that will be modified or added 
 const timerElement = document.getElementById("timer");
 const enemy = document.getElementById("enemy");
 const changeEnemy = "<img src={{ session.saveEnemy.image }} alt='asset enemy'>";
 const win = "<img class='win' src='assets/images/mobile/happy_emoji.png' alt='emoji win'>";
 const loose = "<img class='loose' src='assets/images/mobile/sad_emoji.png' alt='emoji loose'>";
-// la fonction qui sera appliquer sous l'effet du timer 
+// the function that will be applied under the effect of the timer 
 function reduceTime() {
     timerElement.innerText = time;
     time--;
@@ -30,9 +30,10 @@ function reduceTime() {
                 timerElement.innerHTML = win;
             }
             break;
+            // the counter continues to rotate and a -1 returns on getready
         case -1:
             document.location.href = '/getready';
     }
 }
-// setInterval appel la fonction reduceTime tout les 1000 ms (1 seconde) 
+// setInterval call the reduceTime function every 1000 ms (1 second)
 setInterval(reduceTime, 1000);

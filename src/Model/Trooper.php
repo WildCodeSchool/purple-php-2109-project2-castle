@@ -66,7 +66,7 @@ class Trooper
         }
         return $this->image;
     }
-    /*definir l'image indice*/
+    /*define the image to help*/
     public function getIndice(): string
     {
         if ($this->indice === null) {
@@ -84,27 +84,27 @@ class Trooper
         }
         return $this->indice;
     }
-    /*retourne la vigueur*/
+    /*returns vigor*/
     public function getVigor(): int
     {
         return $this->vigor;
     }
-    /*modifie la vigueur*/
+    /*update igor*/
     public function setVigor($vigor): void
     {
         $this->vigor = $vigor;
     }
-    /*modifie le type*/
+    /*update type*/
     public function setType($type): void
     {
         $this->type = $type;
     }
-    /*retourne le type*/
+    /*return type*/
     public function getType(): int
     {
         return $this->type;
     }
-    /* retourne le bonne image en fonction du niveau de vigueur*/
+    /* returns an image according to the level of vigor*/
     public function getImgVigor(): string
     {
         if ($this->imgVigor === null) {

@@ -4,8 +4,8 @@ namespace App\Model;
 
 class SessionManager extends AbstractManager
 {
-    /*verifie si les clé de session existe et les remplace ou les creer en fonction
-    pour sauver nos information */
+    /*check if the session keys exist and replace them or create them accordingly
+    to save our information */
     public function saveElement(Trooper $enemy, array $troops, array $game): array
     {
         if (!isset($_SESSION['saveEnemy'])) {
