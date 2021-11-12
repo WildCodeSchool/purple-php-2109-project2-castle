@@ -23,7 +23,7 @@ class FightController extends AbstractController
         // recovery of player troop and creation of enemy troop
         $troopManager = new TroopManager();
         $troops = $troopManager->selectTroopPlayer();
-        $enemy = $troopManager->selectTroopEnemy((rand(1, 3)), 5);
+        $enemy = $troopManager->selectTroopEnemy((rand(0, 2)), 5);
         // to stall troops in a session
         $session = new SessionManager();
         $_SESSION = $session->saveElement($enemy, $troops, $game);
@@ -59,12 +59,10 @@ class FightController extends AbstractController
     public function fightOutcome($id)
     {
         //checks the coherence of $id
-        if ($id != 1 && $id != 2 && $id != 3) {
+        if ($id != 0 && $id != 1 && $id != 2) {
             return $this->twig->render('Home/index.html.twig');
         }
         session_start();
-        // match troop type number id with table index
-        $id--;
         //returns our data stored in the session
         $trooperPlayer = $_SESSION['troops'][$id];
         //resolution of the battle

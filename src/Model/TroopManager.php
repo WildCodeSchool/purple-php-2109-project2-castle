@@ -64,9 +64,9 @@ class TroopManager extends AbstractManager
                     break;
             }
             // save in database
-            $this->setVigor(1, $vigor0);
-            $this->setVigor(2, $vigor1);
-            $this->setVigor(3, $vigor2);
+            $this->setVigor(Trooper::ARCHER, $vigor0);
+            $this->setVigor(Trooper::PIKEMAN, $vigor1);
+            $this->setVigor(Trooper::KNIGHT, $vigor2);
         }
     }
 }

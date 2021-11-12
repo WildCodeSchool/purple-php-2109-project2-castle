@@ -10,9 +10,9 @@ class Trooper
     public const MIN_ATTACK = 1;
     public const MAX_ATTACK = 10;
     public const MAX_VIGOR = 5;
-    public const ARCHER = 1;
-    public const PIKEMAN = 2;
-    public const KNIGHT = 3;
+    public const ARCHER = 0;
+    public const PIKEMAN = 1;
+    public const KNIGHT = 2;
     // type, player and vigor values from database.
     private int $type;
     private int $vigor;
@@ -53,13 +53,13 @@ class Trooper
     {
         if ($this->image === null) {
             switch ($this->type) {
-                case 1:
+                case (self::ARCHER):
                     $this->image = "../assets/images/mobile/archer.png";
                     break;
-                case 2:
+                case (self::PIKEMAN):
                     $this->image = "../assets/images/mobile/pikeman.png";
                     break;
-                case 3:
+                case (self::KNIGHT):
                     $this->image = "../assets/images/mobile/knight.png";
                     break;
             }
@@ -71,13 +71,13 @@ class Trooper
     {
         if ($this->indice === null) {
             switch ($this->type) {
-                case 1:
+                case (self::ARCHER):
                     $this->indice = "../assets/images/mobile/tent-archer.png";
                     break;
-                case 2:
+                case (self::PIKEMAN):
                     $this->indice = "../assets/images/mobile/tent-pikeman.png";
                     break;
-                case 3:
+                case (self::KNIGHT):
                     $this->indice = "../assets/images/mobile/tent-knight.png";
                     break;
             }

@@ -16,6 +16,6 @@ CREATE TABLE `trooper` (
   `vigor` INT NOT NULL,
   PRIMARY KEY (`id`));
 
+INSERT INTO `trooper` (`type`, `vigor`) VALUES (0, 5);
 INSERT INTO `trooper` (`type`, `vigor`) VALUES (1, 5);
 INSERT INTO `trooper` (`type`, `vigor`) VALUES (2, 5);
-INSERT INTO `trooper` (`type`, `vigor`) VALUES (3, 5);
