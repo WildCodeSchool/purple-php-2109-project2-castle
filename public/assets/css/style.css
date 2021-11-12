@@ -11,13 +11,4 @@
     --font-troop:#ffebbf; 
     --background-score:#5C5C5C;
     --background-nbScore:#242424;
-    
 }
-
-@font-face {
-    font-family: 'Open Sans';
-    font-style: normal;
-    font-weight: 300;
-    src: local('Open Sans Light'), local('OpenSans-Light'), url(http://themes.googleusercontent.com/static/fonts/opensans/v6/DXI1ORHCpsQm3Vp6mXoaTaRDOzjiPcYnFooOUGCOsRk.woff) format('woff');
-  }
-  
