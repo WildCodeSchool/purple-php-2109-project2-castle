@@ -25,7 +25,6 @@ class TroopManager extends AbstractManager
         return $enemy;
     }
 
-    
     /**
     * UPDATE VIGOR IN DATABASE
     */
@@ -47,7 +46,6 @@ class TroopManager extends AbstractManager
             $vigor0 = $_SESSION['troops']['0']->getVigor();
             $vigor1 = $_SESSION['troops']['1']->getVigor();
             $vigor2 = $_SESSION['troops']['2']->getVigor();
-            
             switch ($id) {
                 case 0:
                     $vigor0 = Trooper::lessVigor($vigor0);
