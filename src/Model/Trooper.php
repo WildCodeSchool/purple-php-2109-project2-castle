@@ -131,4 +131,24 @@ class Trooper
         }
         return $this->imgVigor;
     }
+
+    /* calculation of the increase of the vigor */
+    public static function moreVigor(int $vigor): int
+    {
+        $vigor++;
+        if ($vigor > 5) {
+            $vigor = 5;
+        }
+        return $vigor;
+    }
+
+    /* calculation of the decrease of the vigor */
+    public static function lessVigor(int $vigor): int
+    {
+        $vigor--;
+        if ($vigor < 0) {
+            $vigor = 0;
+        }
+        return $vigor;
+    }
 }
