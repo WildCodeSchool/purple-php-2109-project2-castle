@@ -30,10 +30,10 @@ Result of fight
         <p>~ VS ~</p>
         <div class="backgroundChoice">
             <p id="enemy" class="green"><img src='assets/images/mobile/return_icon.png' alt='asset enemy'></p>
-            <p><img src={{ session.saveEnemy.imgVigor }} alt="asset vigor enemy {{ session.saveEnemy.vigor }} / 5"></p>
+            <p><img src={{ enemy.imgVigor }} alt="asset vigor enemy {{ enemy.vigor }} / 5"></p>
         </div>
     </div>
-    <h2 class="score"> Score <br>{{session.score}}</h2>
+    <h2 class="score"> Score <br>{{score}}</h2>
 </section>
 {% endblock %}
 {% block javascript %}

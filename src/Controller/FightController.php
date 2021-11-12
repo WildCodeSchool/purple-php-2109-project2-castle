@@ -83,7 +83,8 @@ class FightController extends AbstractController
             'trooperPlayer' => $trooperPlayer,
             'result' => $result,
             'newScore' => $newScore,
-            'session' => $_SESSION,
+            'score' => $_SESSION['score'],
+            'enemy' => $_SESSION['saveEnemy'],
         ]);
     }
 }

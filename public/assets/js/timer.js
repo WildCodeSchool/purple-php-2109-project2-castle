@@ -5,7 +5,7 @@ let time = 4;
 //selection of the various elements that will be modified or added 
 const timerElement = document.getElementById("timer");
 const enemy = document.getElementById("enemy");
-const changeEnemy = "<img src={{ session.saveEnemy.image }} alt='asset enemy'>";
+const changeEnemy = "<img src={{ enemy.image }} alt='asset enemy'>";
 const win = "<img class='win' src='assets/images/mobile/happy_emoji.png' alt='emoji win'>";
 const loose = "<img class='loose' src='assets/images/mobile/sad_emoji.png' alt='emoji loose'>";
 // the function that will be applied under the effect of the timer 
