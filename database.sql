@@ -1,3 +1,7 @@
+DROP TABLE `game`;
+
+DROP TABLE `trooper`;
+
 CREATE TABLE `game` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `score` INT NOT NULL,
@@ -5,7 +9,6 @@ CREATE TABLE `game` (
   PRIMARY KEY (`id`));
 
 INSERT INTO `game` (`score`, `round`) VALUES (200,1);
-
 
 CREATE TABLE `trooper` (
   `id` INT NOT NULL AUTO_INCREMENT,
