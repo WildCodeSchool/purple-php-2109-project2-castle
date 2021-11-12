@@ -2,7 +2,7 @@
 
 namespace App\Model;
 
-class SessionManager extends AbstractManager
+class SessionManager
 {
     /*check if the session keys exist and replace them or create them accordingly
     to save our information */
