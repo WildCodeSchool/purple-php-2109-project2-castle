@@ -46,6 +46,7 @@ class Trooper
         (self::DEXTERITY * ($this->vigor / self::MAX_VIGOR));
         $attackEnemy = (rand(self::MIN_ATTACK, self::MAX_ATTACK) + $bonusEnemy) + (self::DEXTERITY);
         $result = $attackPlayer - $attackEnemy;
+        
         return $result;
     }
     /*display image according to type*/

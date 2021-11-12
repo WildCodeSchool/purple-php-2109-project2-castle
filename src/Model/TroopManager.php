@@ -42,31 +42,31 @@ class TroopManager extends AbstractManager
      */
     public function updateVigor(int $id): void
     {
-        if (isset($_SESSION['troops'])) {
-            $vigor0 = $_SESSION['troops']['0']->getVigor();
-            $vigor1 = $_SESSION['troops']['1']->getVigor();
-            $vigor2 = $_SESSION['troops']['2']->getVigor();
-            switch ($id) {
-                case 0:
-                    $vigor0 = Trooper::lessVigor($vigor0);
-                    $vigor1 = Trooper::moreVigor($vigor1);
-                    $vigor2 = Trooper::moreVigor($vigor2);
-                    break;
-                case 1:
-                    $vigor0 = Trooper::moreVigor($vigor0);
-                    $vigor1 = Trooper::lessVigor($vigor1);
-                    $vigor2 = Trooper::moreVigor($vigor2);
-                    break;
-                case 2:
-                    $vigor0 = Trooper::moreVigor($vigor0);
-                    $vigor1 = Trooper::moreVigor($vigor1);
-                    $vigor2 = Trooper::lessVigor($vigor2);
-                    break;
-            }
-            // save in database
-            $this->setVigor(Trooper::ARCHER, $vigor0);
-            $this->setVigor(Trooper::PIKEMAN, $vigor1);
-            $this->setVigor(Trooper::KNIGHT, $vigor2);
+        $troop = $this->selectTroopPlayer();
+        $vigor0 = $troop['0']->getVigor();
+        $vigor1 = $troop['1']->getVigor();
+        $vigor2 = $troop['2']->getVigor();
+        switch ($id) {
+            case 0:
+                $vigor0 = Trooper::lessVigor($vigor0);
+                $vigor1 = Trooper::moreVigor($vigor1);
+                $vigor2 = Trooper::moreVigor($vigor2);
+                break;
+            case 1:
+                $vigor0 = Trooper::moreVigor($vigor0);
+                $vigor1 = Trooper::lessVigor($vigor1);
+                $vigor2 = Trooper::moreVigor($vigor2);
+                break;
+            case 2:
+                $vigor0 = Trooper::moreVigor($vigor0);
+                $vigor1 = Trooper::moreVigor($vigor1);
+                $vigor2 = Trooper::lessVigor($vigor2);
+                break;
         }
+        // save in database
+        $this->setVigor(Trooper::ARCHER, $vigor0);
+        $this->setVigor(Trooper::PIKEMAN, $vigor1);
+        $this->setVigor(Trooper::KNIGHT, $vigor2);
+        
     }
 }
