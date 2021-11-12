@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Model\CastleManager;
 use App\Model\SessionManager;
 use App\Model\TroopManager;
+use App\Model\Trooper;
 
 class FightController extends AbstractController
 {
@@ -59,7 +60,7 @@ class FightController extends AbstractController
     public function fightOutcome($id)
     {
         //checks the coherence of $id
-        if ($id != 0 && $id != 1 && $id != 2) {
+        if ($id != (Trooper::ARCHER) && $id != (Trooper::PIKEMAN) && $id != (Trooper::KNIGHT)) {
             return $this->twig->render('Home/index.html.twig');
         }
         session_start();
