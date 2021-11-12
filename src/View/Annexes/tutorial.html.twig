@@ -1,0 +1,68 @@
+{% extends 'layout.html.twig' %}
+{% block title %} Tutorial {{parent()}}{% endblock %}
+{% block stylesheet %}
+<link rel="stylesheet" href="../assets/css/tutorialAndTOS.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+{% endblock %}
+
+{% block content %}
+    {# Div using grid with background sky, return button, logo and another button (non displayed) #}
+    <div class="sky">
+        <div class="returnbutton">
+            <img id="returnbutton" src="/assets/images/mobile/return_icon.png">
+        </div>
+        <div class="logo">
+            <img id="logo" src="/assets/images/mobile/logo.png">
+        </div>
+        <div class="otherbutton">
+        </div>
+    </div>
+    {# Div which only displays the castle #}
+    <div class="castle">
+            <img id="castle" src="/assets/images/mobile/battle_castle.png" alt="">
+        </div>
+    {# Div with background grass and bloc titles and text #}
+    <div class="grass">
+        <div class="title">
+            <h1>TUTORIAL</h1>
+        </div>
+        <div class="container">
+            <hr>
+            <h1>Presentation</h1>
+            <hr>
+            <br>
+            {# Div dedicated to display round image #}
+            <div class="circleone">
+            </div>
+            <p>“Lord, the castle is about to be attacked..." 
+            You look up from your papers, one of the castle guards comes running towards you, out of breath. He says again: 
+            "My lord, the enemy is approaching from the east, we are under attack! " . </p>
+            <br>
+            <p>It is time for you to defend your castle. After having quickly gathered your officers and taken stock of the situation, you notice that the enemy is sending you troops in waves. A quick consultation with your advisors brings you three possible solutions. Which troop are you going to send into battle? 
+            </p>
+            <br><br>
+            <hr>
+            <h1>How to win</h1>
+            <hr>
+            <br>
+            <div class="circletwo">
+            </div>
+            <p>In this game you will have to choose the type of troop to send into battle, each type having a higher strength ratio than another type. Your warlord informs you: 
+            "Archers are stronger against pikemen. 
+            Pikemen are stronger against knights. 
+            Knights are stronger against archers."</p>
+            <br>
+            <p>Your prime minister intervenes: "Be careful with the fatigue of your troops, it makes them less effective in combat."</p><br><p>
+            Indeed you will have to watch the fatigue rate of your troops, materialized by 5 colored squares that we will call vigor. In each round of combat the troop used loses 1 point of vigor, which would result in reducing its power. Moreover, a troop that has used up all its vigor points will no longer be able to fight and will have to rest. The vigor goes up by 1 point every 2 turns for the unused troops. 
+            In this game you will have to use some strategy, and rely on luck if you want to get out of it.</p><br><p> In each round the enemy will send you a type of troop in full form, it's up to you to play wisely by countering this attack with the right type of troop while sparing your men. At the end of each battle a combat result will be calculated and will increase or decrease the score of your castle depending on whether you have won or lost.
+            While you are deep in thought, you feel a hand gently resting on your forearm. Your warlord announces... 
+            "My lord, the enemy is here, you must choose now."
+            </p>
+            <br>
+            <p>It's up to you!
+            </p>
+        </div>
+    </div>
+    
+
+{% endblock %}
