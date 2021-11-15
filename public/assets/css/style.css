@@ -1,16 +1,76 @@
-@import url('https://fonts.googleapis.com/css2?family=Londrina+Solid&family=Roboto&family=Skranji&display=swap');
-
 :root
 {
     --dark-text: #000000;
     --light-text: #FFFFFF;
     --tutorial-text:#422D00;
+    --fightBtn: #643E28;
     --green-troop: #5CFF33;
     --red-troop:#BE1818;
     --yellow-troop:#FFD600;
-    --font-troop:#EEAC99; 
+    --font-troop:#ffebbf; 
     --background-score:#5C5C5C;
     --background-nbScore:#242424;
-    --background-buttons:#EDEDED;
+    --greyBtn: #EDEDED;
+    
 }
- 
+
+/* LondrinaSolid */
+
+@font-face {
+    font-family: "LondrinaSolid";
+    src: url("./fonts/LondrinaSolid/LondrinaSolid-Thin.ttf");
+    font-weight: 100;
+  }
+
+@font-face {
+    font-family: "LondrinaSolid";
+    src: url("./fonts/LondrinaSolid/LondrinaSolid-Light.ttf");
+    font-weight: 300;
+  }
+
+@font-face {
+    font-family: "LondrinaSolid";
+    src: url("./fonts/LondrinaSolid/LondrinaSolid-Regular.ttf");
+    font-weight: 400;
+  }
+
+@font-face {
+    font-family: "LondrinaSolid";
+    src: url("./fonts/LondrinaSolid/LondrinaSolid-Black.ttf");
+    font-weight: 900;
+  }
+
+
+/* Roboto */
+
+@font-face {
+    font-family: "Roboto";
+    src: url("./fonts/Roboto/Roboto-Regular.ttf");
+    font-weight: 400;
+  }
+
+@font-face {
+    font-family: "Roboto";
+    src: url("./fonts/Roboto/Roboto-Medium.ttf");
+    font-weight: 500;
+  }
+
+@font-face {
+    font-family: "Roboto";
+    src: url("./fonts/Roboto/Roboto-Black.ttf");
+    font-weight: 900;
+  }
+
+/* Skranji */
+
+@font-face {
+    font-family: "Skranji";
+    src: local("Skranji"), url("./fonts/Skranji/Skranji-Regular.ttf");
+    font-weight: normal;
+  }
+
+@font-face {
+    font-family: "Skranji";
+    src: local("Skranji"), url("./fonts/Skranji/Skranji-Bold.ttf");
+    font-weight: bold;
+  }
