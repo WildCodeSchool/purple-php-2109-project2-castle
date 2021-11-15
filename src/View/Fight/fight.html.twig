@@ -15,16 +15,16 @@ Result of fight
     <div class="alignChoice">
         <div class="backgroundChoice">
             <div class="oneTroop">
-                {% if troop.vigor == 3 or troop.vigor == 2 %}
+                {% if vigorTroopPlayer == 3 or vigorTroopPlayer == 2 %}
                 <p class="yellow">
-                    {% elseif troop.vigor == 1 %}
+                    {% elseif vigorTroopPlayer == 1 %}
                 <p class="red">
                     {% else %}
                 <p class="green">
                     {% endif %}
                     <img src={{ trooperPlayer.image}} alt="asset troop ">
                 </p>
-                <p><img src={{ trooperPlayer.imgVigor }} alt="asset vigor troop {{ trooperPlayer.vigor}} / 5 "></p>
+                <p><img src={{ imgVigorTroopPlayer }} alt="asset vigor troop {{ vigorTroopPlayer}} / 5 "></p>
             </div>
         </div>
         <p>~ VS ~</p>

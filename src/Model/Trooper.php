@@ -46,7 +46,6 @@ class Trooper
         (self::DEXTERITY * ($this->vigor / self::MAX_VIGOR));
         $attackEnemy = (rand(self::MIN_ATTACK, self::MAX_ATTACK) + $bonusEnemy) + (self::DEXTERITY);
         $result = $attackPlayer - $attackEnemy;
-        
         return $result;
     }
     /*display image according to type*/
@@ -134,22 +133,43 @@ class Trooper
     }
 
     /* calculation of the increase of the vigor */
-    public static function moreVigor(int $vigor): int
+    public function moreVigor(): void
     {
-        $vigor++;
+        $vigor = $this->vigor + 1;
         if ($vigor > 5) {
             $vigor = 5;
         }
-        return $vigor;
+        $this->vigor = $vigor;
     }
 
     /* calculation of the decrease of the vigor */
-    public static function lessVigor(int $vigor): int
+    public function lessVigor(): void
     {
-        $vigor--;
+        $vigor = $this->vigor - 1;
         if ($vigor < 0) {
             $vigor = 0;
         }
-        return $vigor;
+        $this->vigor = $vigor;
+    }
+    /* modify vigor */
+    public function modifyVigor(int $id, array $troop): void
+    {
+        switch ($id) {
+            case 0:
+                $this->lessVigor();
+                $troop['1']->moreVigor();
+                $troop['2']->moreVigor();
+                break;
+            case 1:
+                $troop['0']->moreVigor();
+                $this->lessVigor();
+                $troop['2']->moreVigor();
+                break;
+            case 2:
+                $troop['0']->moreVigor();
+                $troop['1']->moreVigor();
+                $this->lessVigor();
+                break;
+        }
     }
 }
