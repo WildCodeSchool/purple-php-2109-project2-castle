@@ -9,7 +9,7 @@ nav {
     height: 2.5em;
     border: solid var(--background-nbScore);
     border-radius: 0.6em;
-    background-color: var(--background-buttons);
+    background-color: var(--greyBtn);
 }
 
 .questionmark-icon {
@@ -60,7 +60,7 @@ main {
     align-self: center;
     border: solid var(--background-nbScore);
     border-radius: 0.3em;
-    background-color: var(--background-buttons);
+    background-color: var(--greyBtn);
     text-align: center;
     padding: 0.4em 1em 0.2em 1em;
 }
