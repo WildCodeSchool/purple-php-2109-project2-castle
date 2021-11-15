@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Londrina+Solid&family=Roboto&family=Skranji&display=swap');
+
+nav {
+    padding: 1em 1em 0em 1em;
+    display: flex;
+    justify-content: space-between ;
+}
+
+.questionmark-button, .music-button {
+    width: 2.5em;
+    height: 2.5em;
+    border: solid var(--background-nbScore);
+    border-radius: 0.6em;
+    background-color: var(--background-buttons);
+}
+
+.questionmark-icon {
+    padding: 0.4em 0.2em 0.2em 0.7em;
+}
+
+.music-icon {
+    padding: 0.5em 0.2em 0.2em 0.5em;
+}
+
+/*background for mobile, portrait*/
+body {
+    background-image: url("/assets/images/mobile/home_background.png");
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+}
+
+main {
+    display: grid;
+    height: 90vh;
+    grid-template-areas: "castle castle" "defend-button tutorial-button" "logo logo" "camp camp";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 6fr 1fr 2fr;
+}
+
+.castle {
+    grid-area: castle;
+    justify-self: center;
+    align-self:flex-end;
+    max-width: 100%;
+    height: auto;
+}
+
+.defend-button {
+    grid-area: defend-button;
+}
+
+.tutorial-button {
+    grid-area: tutorial-button;
+}
+
+.defend-button, .tutorial-button {
+    width: 5em;
+    height: 1.5em;
+    justify-self: center;
+    align-self: center;
+    border: solid var(--background-nbScore);
+    border-radius: 0.3em;
+    background-color: var(--background-buttons);
+    text-align: center;
+    padding: 0.4em 1em 0.2em 1em;
+}
+
+.defend-button a, .tutorial-button a {
+    text-decoration: none;
+    color: var(--dark-text);
+    font-family: 'Skranji';
+    font-size: 1em;
+}
+
+.logo {
+    grid-area: logo;
+    place-self: center;
+}
+
+/*camp is displayed only for tablet portrait mode and desktop*/
+.camp {
+    display: none;
+}
