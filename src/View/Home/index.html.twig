@@ -9,10 +9,11 @@
 {% endblock %}
 
 {% block content %}
+
         <nav class="nav-home">
             {#to link a page, add url like example /file/page#}
             <a href="#" class="questionmark-button"><img src="/assets/images/mobile/question_mark.png" alt="question mark" class="questionmark-icon"></a>
-            <a href="#" class="music-button"><img src="/assets/images/mobile/music_icon.png" alt="music icon" class="music-icon"></a>    
+            <a class="music-button" onclick="playPause()"><img src="/assets/images/mobile/mute_icon.png" alt="music icon" class="music-icon" id="music-button"></a>    
         </nav>
     <main>
         <div class="castle">
@@ -28,3 +29,5 @@
     </main>
     
 {% endblock %}
+{% block javascript %}{% endblock %}
+
