@@ -3,7 +3,6 @@
  let time = 4;
  // DOM
  const timerElement = document.getElementById("timer");
- const enemy = document.getElementById("enemy");
  const win = "<h3>HURRAY!<br>WELL DONE</h3><img class='emoji win' src='assets/images/mobile/happy_emoji.png' alt='emoji win'>";
  const loose = "<h3>OH NO!<br>WE'VE LOST</h3><img class='emoji loose' src='assets/images/mobile/sad_emoji.png' alt='emoji loose'>";
 
@@ -22,7 +21,7 @@
              timerElement.innerHTML = "<h4>" + time + "</h4>";
              break;
          case 0:
-             // enemy.innerHTML = changeEnemy;
+             // Result is actually a twig element, defined inside the view
              if (result < 0) {
                  timerElement.innerHTML = loose;
              } else {
