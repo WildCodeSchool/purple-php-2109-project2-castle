@@ -9,7 +9,7 @@
     {# Div using grid with background sky, return button, logo and another button (non displayed) #}
     <div class="sky">
         <div class="returnbutton">
-            <img id="returnbutton" src="/assets/images/mobile/return_icon.png" alt="return to home">
+            <a href="/"><img id="returnbutton" src="/assets/images/mobile/return_icon.png" alt="return to home"></a>
         </div>
         <div class="logo">
             <img id="logo" src="/assets/images/mobile/logo.png" alt="logo Defend the Castle">
@@ -18,9 +18,11 @@
         </div>
     </div>
     {# Div which only displays the castle #}
-    <div class="castle">
-            <img id="castle" src="/assets/images/mobile/battle_castle.png" alt="Castle">
-        </div>
+    <picture class="castle">
+        <source id="castle" media="(max-width:650px)" srcset="/assets/images/mobile/troop_choice_castle.png">
+        <img id="castle" src="/assets/images/desktop/desktop_castle_troop_choice.png" alt="Castle">
+    </picture>
+        
     {# Div with background grass and bloc titles and text #}
     <div class="grass">
         <div class="title">

@@ -9,5 +9,5 @@
 return [
     '' => ['HomeController', 'index',],
     'tutorial' => ['TutorialController', 'index',],
-    'termsOfService' => ['TermsOfServiceController', 'index',],
+    'termsofservice' => ['TermsOfServiceController', 'index',],
 ];
