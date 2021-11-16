@@ -1,4 +1,4 @@
-# Defend the Castle
+# DefendTheCastle
 
 Project 2 of the dev (php) training at the Wild Code School (Sept 2021 class)
 
