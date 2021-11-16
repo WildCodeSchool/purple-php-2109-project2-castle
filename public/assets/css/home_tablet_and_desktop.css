@@ -1,0 +1,61 @@
+/*background for tablet, portrait*/
+@media only screen and (min-width : 480px) and (max-width: 811px) {
+    
+    body {
+        background-image: url("/assets/images/tablet/home_background_portrait.png");
+    }
+}
+
+@media only screen and (min-width : 812px) {
+    /*background for tablet landscape and desktop*/
+    body {
+        background-image: url("/assets/images/desktop/home_background.png");
+
+    }
+    /*change buttons position in nav bar for tablet landscape and desktop*/
+    nav {
+        justify-content: flex-end;
+    }
+    .questionmark-button {
+        margin-right: 1.5em;
+    }
+    /*layout for tablet landscape and desktop*/
+    main {
+        grid-template-areas: "logo logo" "castle defend-button" "castle tutorial-button" "castle camp";
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 2fr 1fr 1fr 3fr;
+    }
+
+    .defend-button {
+        align-self: flex-end;
+        width: 8em;
+    }
+
+    .tutorial-button {
+        align-self: center;
+        width: 8em;
+    }
+}
+/*camp is displayed only for tablet landscape and desktop*/
+@media only screen and (min-width : 916px) {
+    .camp {
+        grid-area: camp;
+        display: block;
+        align-self: flex-end;
+    }
+
+}
+
+/*castle position for tablet landscape*/
+@media only screen and (min-width : 480px) and (max-width: 812px){
+    .castle {
+        margin-top: 16em;
+    }
+}
+
+/*castle size for mobile landscape*/
+@media only screen and (min-width : 812px) and (max-width: 915px){
+    .castle picture {
+        height: fit-content;
+    }
+}
