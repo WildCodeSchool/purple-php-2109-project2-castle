@@ -45,7 +45,7 @@ class FightController extends AbstractController
         //checks the coherence of $id
         if ($id != (Trooper::ARCHER) && $id != (Trooper::PIKEMAN) && $id != (Trooper::KNIGHT)) {
             header("Location: /");
-            exit;
+            return "";
         }
         //recovery of troop enemy
         $enemy = new SessionHandler();
