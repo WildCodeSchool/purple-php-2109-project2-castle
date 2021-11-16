@@ -32,7 +32,7 @@
     <picture class="tent">
         <source srcset="assets/images/desktop/battle_tent.png" media="(min-width: 530px)">
         <img class="tent" src="assets/images/mobile/tent.png" alt="image enemy indice ">
-        <!-- Lorsque us5-Fight est màj, supprimer la ligne du dessus, et décommenter:
+        <!-- When us5-Fight is updated, delete the previous line and uncomment:
         <img class="tent" src=""{{ enemy.indice }} alt="image enemy indice ">
         -->
     </picture>
@@ -51,19 +51,19 @@
                     {% endif %}
                     {% if troop.vigor  == 0 %}
                     <img class="troopImg" src="assets/images/mobile/archer.png" alt="asset troop">
-                    <!-- Lorsque us5-Fight est màj, supprimer la ligne du dessus, et décommenter:
+                    <!-- When us5-Fight is updated, delete the previous line and uncomment:
                     <img class="troopImg" src={{ troop.image}} alt="asset troop">
                     -->
                     {% else %}
                     <a href="fight?id={{ troop.type }}"><img class="troopImg" src="assets/images/mobile/archer.png" alt="asset troop"></a>
-                    <!-- Lorsque us5-Fight est màj, supprimer la ligne du dessus, et décommenter:
+                    <!-- When us5-Fight is updated, delete the previous line and uncomment:
                     <a href="fight?id={{ troop.type }}"><img class="troopImg" src={{ troop.image}} alt="asset troop"></a>
                     -->
                     {% endif %}
                 </div>
                 <p class="vigor">
                     <img class="vigorImg" src="assets/images/mobile/vigor5-5.png" alt="asset vigor troop {{ troop.vigor}} / 5 ">
-                    <!-- Lorsque us5-Fight est màj, supprimer la ligne du dessus, et décommenter:
+                    <!-- When us5-Fight is updated, delete the previous line and uncomment:
                     <img class="vigorImg" src={{ troop.imgVigor }} alt="asset vigor troop {{ troop.vigor}} / 5 ">
                     -->
                 </p>
@@ -74,7 +74,7 @@
         <div class="enemy">
             <h1 class="troop green">?</h1>
             <p><img class="vigorImg" src="assets/images/mobile/vigor5-5.png" alt="asset vigor enemy {{ enemy.vigor }} / 5"></p>
-            <!-- Lorsque us5-Fight est màj, supprimer la ligne du dessus, et décommenter:
+            <!-- When us5-Fight is updated, delete the previous line and uncomment:
             <p><img class="vigorImg" src={{ enemy.imgVigor }} alt="asset vigor enemy {{ enemy.vigor }} / 5"></p>
             -->
         </div>
