@@ -10,6 +10,7 @@
     /*background for tablet landscape and desktop*/
     body {
         background-image: url("/assets/images/desktop/home_background.png");
+
     }
     /*change buttons position in nav bar for tablet landscape and desktop*/
     nav {
@@ -40,6 +41,7 @@
     .camp {
         grid-area: camp;
         display: block;
+        align-self: flex-end;
     }
 
 }
