@@ -29,7 +29,9 @@ If you develop on Windows, you should edit you git configuration to change your 
 
 `git config --global core.autocrlf true`
 
-How does URL routing work ?
+### How does URL routing work ?
+
+![simple_MVC.png](.tours/simple_MVC.png)
 
 We have now entered our different routes (url) in the file `route.php` as well as the controller and the method to call. Each controller will call the corresponding manager according to our needs. The manager will return the information requested by the controller from the database or not, and the controller will send it back to our Twig view.
 
