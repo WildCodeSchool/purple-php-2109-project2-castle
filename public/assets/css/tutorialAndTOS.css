@@ -1,0 +1,147 @@
+*{
+    margin:0;
+    padding: 0;
+}
+
+h1{
+    font-size: 4vh;
+    line-height: 7vh;
+    margin: 0;
+    text-align: center;
+}
+
+p{
+    margin-top: 1vh;
+    font-size: 3vh;
+    text-align: center;
+}
+
+hr{
+    width: 70%;
+    height: 0.6vh;
+    margin: 0.2vh auto;
+    background-color: rgba(44, 7, 7, 0.993);
+    border: none;
+}
+
+.sky{
+    position: relative;
+    display:grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: 40vh;
+    background: url('../images/mobile/sky.png');
+    background-size: cover;
+}
+
+.returnbutton{
+    width: 7vh;
+    height: 7vh;
+    margin-top: 4vh;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    border: 0.5vh solid black;
+    border-radius: 2vh;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+}
+
+#returnbutton{
+    width: 4vh; 
+    height: 4vh;
+}
+
+.otherbutton{
+    display:none;
+    width: 7vh;
+    height: 7vh;
+}
+
+.logo{
+    display:block;
+    align-items: center;
+    position:relative;
+    text-align: center;
+   
+}
+#logo{
+    height: 10vh;
+    margin-top: 4vh;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.castle{
+    display:relative;
+    width: 100%;
+    margin-top: -25vmin;
+    margin-left: auto;
+    margin-right: auto;
+    background-size: cover;
+    position: absolute;
+    text-align: center;
+    z-index: 1;
+}
+
+#castle{
+    width:25vmin;
+}
+
+.grass{
+    height: 60vh;
+    position: relative;
+    background: url('../images/mobile/grass.png');
+    background-size: cover;
+    overflow: auto;
+}
+
+.title {
+    width: 60%;
+    height: 7vh;
+    margin : 5vh auto 0 auto ;
+    padding-bottom: 1em;
+    background-color:rgba(44, 7, 7, 0.993);
+    text-align: center;
+    color: white;
+    border-top-left-radius: 0.5em;
+    border-top-right-radius: 0.5em;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 85%;
+    height:45vh;
+    margin: 0 auto;
+    border: 0.2em solid rgb(68, 59, 59);
+    border-radius: 0.5em;
+    box-sizing: border-box;
+    background :#ffa;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.5);
+    text-align: justify;
+    padding: 1vh 5vh ;
+    overflow-y: scroll;
+}
+
+.circleone {
+    width: 10vh;
+    height:10vh;
+    margin: 1vh;
+    background: url('../images/mobile/roi.png');
+    background-size: 100% 100%;
+    border-radius: 50%;
+    float: left;
+    shape-outside: circle();
+    
+}
+
+.circletwo {
+    width: 15vh;
+    height:15vh;
+    margin: 1vh;
+    background: url('../images/mobile/round.png');
+    background-size: 100% 100%;
+    border-radius: 50%;
+    float: right;
+    shape-outside: circle();    
+}
