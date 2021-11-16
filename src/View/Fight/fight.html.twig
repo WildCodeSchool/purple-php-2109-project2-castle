@@ -1,0 +1,44 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}
+Result of fight
+{% endblock %}
+{% block content %}
+<section class="sky">
+    <img class="castle" src="assets/images/mobile/battle_castle.png" alt="Castle open door">
+    <div class="backgroundRound">
+        <h1 id="timer">3</h1>
+    </div>
+</section>
+<section class="grass">
+    <img class="indice" src="assets/images/mobile/tent.png" alt="image enemy indice ">
+    <div class="alignChoice">
+        <div class="backgroundChoice">
+            <div class="oneTroop">
+                {% if vigorTroopPlayer == 3 or vigorTroopPlayer == 2 %}
+                <p class="yellow">
+                    {% elseif vigorTroopPlayer == 1 %}
+                <p class="red">
+                    {% else %}
+                <p class="green">
+                    {% endif %}
+                    <img src={{ trooperPlayer.image}} alt="asset troop ">
+                </p>
+                <p><img src={{ imgVigorTroopPlayer }} alt="asset vigor troop {{ vigorTroopPlayer}} / 5 "></p>
+            </div>
+        </div>
+        <p>~ VS ~</p>
+        <div class="backgroundChoice">
+            <p id="enemy" class="green"><img src='assets/images/mobile/return_icon.png' alt='asset enemy'></p>
+            <p><img src={{ enemy.imgVigor }} alt="asset vigor enemy {{ enemy.vigor }} / 5"></p>
+        </div>
+    </div>
+    <h2 class="score"> Score <br>{{score}}</h2>
+</section>
+{% endblock %}
+{% block javascript %}
+<script>
+    let result = {{ result }};
+</script>
+<script src="assets/js/timer.js"></script>
+{% endblock %}
