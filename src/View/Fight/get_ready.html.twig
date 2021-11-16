@@ -1,0 +1,87 @@
+{% extends 'layout.html.twig' %}
+
+{% block stylesheet %}
+<link rel="stylesheet" href="/assets/css/get_ready.css">
+<link rel="stylesheet" href="/assets/css/get_ready_desktop.css">
+{% endblock %}
+
+{% block title %}Choose your troop{% endblock %}
+ 
+{% block content %}
+<div class="navBlock">
+<nav>
+    <a href="/"><p class="btn"><img class="btnImg" src="assets/images/mobile/return_icon.png" alt=""></p></a>
+    <a href="/"><img class="mainLogo" src="assets/images/mobile/logo.png" alt="Logo of Defend The Castle"></a>
+    <p class="btn" id="music-button" onclick="playPause()"><img class="btnImg" src="assets/images/mobile/music_icon.png" alt="Mute"></p>
+</nav>
+</div>
+<section class="sky">
+    <picture class="castle">
+        <source srcset="assets/images/desktop/desktop_castle_troop_choice.png" media="(min-width: 530px)">
+        <img class= "castleImg" src="assets/images/mobile/troop_choice_castle.png" alt="Castle open door">
+    </picture>
+    <div class="narration">
+        <img class="bubble" src="assets/images/mobile/bubble.png" alt="">
+            <div class="content">
+                <h2>Get Ready for</h2>
+                <h1>Round {{ game.round }}</h1>
+            </div>
+    </div>
+</section>
+<section class="grass">
+    <picture class="tent">
+        <source srcset="assets/images/desktop/battle_tent.png" media="(min-width: 530px)">
+        <img class="tent" src="assets/images/mobile/tent.png" alt="image enemy indice ">
+        <!-- When us5-Fight is updated, delete the previous line and uncomment:
+        <img class="tent" src=""{{ enemy.indice }} alt="image enemy indice ">
+        -->
+    </picture>
+    <div class="battlefield">
+        <div class="myChoice">
+            {% for troop in troops %}
+            <div class="oneTroop">
+                {% if troop.vigor == 3 or troop.vigor == 2 %}
+                <div class="troop yellow">
+                    {% elseif troop.vigor == 1 %}
+                <div class="troop red">
+                    {% elseif troop.vigor == 0 %}
+                <div class="troop black">
+                    {% else %}
+                <div class="troop green">
+                    {% endif %}
+                    {% if troop.vigor  == 0 %}
+                    <img class="troopImg" src="assets/images/mobile/archer.png" alt="asset troop">
+                    <!-- When us5-Fight is updated, delete the previous line and uncomment:
+                    <img class="troopImg" src={{ troop.image}} alt="asset troop">
+                    -->
+                    {% else %}
+                    <a href="fight?id={{ troop.type }}"><img class="troopImg" src="assets/images/mobile/archer.png" alt="asset troop"></a>
+                    <!-- When us5-Fight is updated, delete the previous line and uncomment:
+                    <a href="fight?id={{ troop.type }}"><img class="troopImg" src={{ troop.image}} alt="asset troop"></a>
+                    -->
+                    {% endif %}
+                </div>
+                <p class="vigor">
+                    <img class="vigorImg" src="assets/images/mobile/vigor5-5.png" alt="asset vigor troop {{ troop.vigor}} / 5 ">
+                    <!-- When us5-Fight is updated, delete the previous line and uncomment:
+                    <img class="vigorImg" src={{ troop.imgVigor }} alt="asset vigor troop {{ troop.vigor}} / 5 ">
+                    -->
+                </p>
+            </div>
+            {% endfor %}
+        </div>
+        <h1 class="versus">- VS -</h1>
+        <div class="enemy">
+            <h1 class="troop green">?</h1>
+            <p><img class="vigorImg" src="assets/images/mobile/vigor5-5.png" alt="asset vigor enemy {{ enemy.vigor }} / 5"></p>
+            <!-- When us5-Fight is updated, delete the previous line and uncomment:
+            <p><img class="vigorImg" src={{ enemy.imgVigor }} alt="asset vigor enemy {{ enemy.vigor }} / 5"></p>
+            -->
+        </div>
+    </div>
+    <div class="score">
+        <h3>SCORE</h3>
+        <h1>~ {{ game.score }} ~</h1>
+    </div>
+</section>
+{% endblock %}
