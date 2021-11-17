@@ -9,4 +9,9 @@ function scriptReset()
     }
 }
 
-
+function scriptResetCastle0()
+{
+    if ( confirm( "Your ramparts have fallen, the enemy is here! Do you want to take refuge in the nearby castle?" ) ) {
+        document.location.href = '/reset';
+    }
+}
