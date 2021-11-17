@@ -2,12 +2,11 @@
     margin: 0;
     padding: 0;
   }
-  
+
 .sky{
     display: flex;
     background-image: url(../images/mobile/sky.png);
     background-size: cover;
-
     background-position: center;
     height: 40vh;
 }
@@ -22,7 +21,6 @@
     flex-direction: column;
     background-image: url(../images/mobile/grass.png);
     background-size: cover;
-
     background-position: center;
     height: 60vh;
 }
@@ -89,12 +87,10 @@
     margin-top: 5vmin;
     font-size: 15vmin;
     line-height: 5vmin;
-
 }
 
 #timer{
     text-align: center;
-
     font-size: 15vmin;
 }
 
@@ -188,12 +184,10 @@
 .versus {
     font-family: "LondrinaSolid";
     font-size: 13vmin;
-
 }
 
 .score{
     align-self: center;
-
     color: white;
     font-family: "Skranji";
     text-align: center;
@@ -227,7 +221,6 @@
     position: absolute;
     font-weight: 400;
     bottom: 5vmin;
-
 }
 
 .green{
@@ -241,7 +234,6 @@
 .red {
     background-color: var(--red-troop);
 }
-
 
 .black {
     background-color: var(--background-score);
