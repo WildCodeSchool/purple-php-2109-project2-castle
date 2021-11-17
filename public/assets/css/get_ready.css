@@ -1,4 +1,8 @@
-
+* {
+    margin: 0;
+    padding: 0;
+  }
+  
 .sky{
     display: flex;
     background-image: url(../images/mobile/sky.png);
@@ -8,40 +12,9 @@
     height: 40vh;
 }
 
-.navBlock {
-    width: 100%;
-    position: absolute;
-}
-
-nav {
-    display: flex;
-    height: 25vmin;
-    align-items: center;
-    justify-content: space-between;
-    margin-left: 5vmin;
-    margin-right: 5vmin;
-}
-
-.btn {
-    background: var(--greyBtn);
-    height: 11vmin;
-    width: 11vmin;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 5px;
-    border: 2px solid black;
-}
-
 .btnImg {
     width: 7vmin;
     height: 7vmin;
-}
-
-.mainLogo {
-    width: 25vmin;
-    height: 12vmin;
-
 }
 
 .grass{
@@ -203,20 +176,6 @@ nav {
     width: 9vmin;
 }
 
-.button {
-    height: 6vmin;
-    width: 16vmin;
-    background-color: var(--fightBtn);
-    color: white;
-    font-size: 3.5vmin;
-    font-family: "Skranji";
-    font-weight: 400;
-    border: 2px solid black;
-    border-bottom: 3px solid black;
-    border-radius: 5px;
-    text-align: center;
-    line-height: 6.5vmin;
-}
 
 .vigor {
     padding-bottom: 5px;
