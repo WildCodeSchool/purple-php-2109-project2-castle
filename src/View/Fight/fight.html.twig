@@ -17,8 +17,8 @@
 </div>
 <section class="sky">
     <picture class="castle">
-        <source srcset="assets/images/desktop/desktop_castle_troop_choice.png" media="(min-width: 530px)">
-        <img class= "castleImg" src="assets/images/mobile/troop_choice_castle.png" alt="Castle open door">
+        <source srcset="assets/images/desktop/Castle_battle_desktop.png" media="(min-width: 530px)">
+        <img class= "castleImg" src="assets/images/mobile/battle_castle.png" alt="Castle open door">
     </picture>    
     <div class="narration">
         <img class="bubble" src="assets/images/mobile/bubble.png" alt="">
@@ -36,9 +36,9 @@
     </div>
     <div class="battlefield">
         <div class="oneTroop">
-            {% if trooperPlayer.vigor == 3 or trooperPlayer.vigor == 2 %}
+            {% if vigorTroopPlayer == 3 or vigorTroopPlayer == 2 %}
             <div class="troop yellow">
-                {% elseif trooperPlayer.vigor == 1 %}
+                {% elseif vigorTroopPlayer == 1 %}
             <div class="troop red">
                 {% else %}
             <div class="troop green">
@@ -51,7 +51,7 @@
         </div>
         <h1 class="versus">- VS -</h1>
         <div class="enemy">
-            <p id="enemy" class="troop green"><img class="troopImg" src={{ saveEnemy.image }} alt='asset enemy'></p>
+            <p id="enemy" class="troop green"><img class="troopImg" src={{ enemy.image }} alt='asset enemy'></p>
             <p><img class="vigorImg" src={{ enemy.imgVigor }} alt="asset vigor enemy {{ enemy.vigor }} / 5"></p>
         </div>
     </div>
