@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 .sky{
     display: flex;
     background-image: url(../images/mobile/sky.png);
@@ -14,6 +15,14 @@
     display: flex;
     background-image: url(../images/mobile/sky.png);
     background-size: cover;
+=======
+
+.sky{
+    display: flex;
+    background-image: url(../images/mobile/sky.png);
+    background-size: cover;
+
+>>>>>>> 8af341f8bccf5de7e9a8e522ec2a731508e3f776
     background-position: center;
     height: 40vh;
 }
@@ -51,7 +60,11 @@ nav {
 .mainLogo {
     width: 25vmin;
     height: 12vmin;
+<<<<<<< HEAD
 >>>>>>> 2f8eeff9c5ace72a615dd96115c55dfe9a1113df
+=======
+
+>>>>>>> 8af341f8bccf5de7e9a8e522ec2a731508e3f776
 }
 
 .grass{
@@ -59,24 +72,48 @@ nav {
     flex-direction: column;
     background-image: url(../images/mobile/grass.png);
 <<<<<<< HEAD
+<<<<<<< HEAD
     margin: 0;
+=======
+    background-size: cover;
+
+    background-position: center;
+    height: 60vh;
+>>>>>>> 8af341f8bccf5de7e9a8e522ec2a731508e3f776
 }
 
 .castle{
-    margin-bottom: -10px;
+    height: 35vmin;
+    align-self: flex-end;
+    margin-bottom: -20px;
+    margin-left: 6vw;
 }
 
-.backgroundRound{
-    background-image: url(../images/mobile/bubble.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    min-width: 150px;
+.narration {
+    display: flex;
+    align-self: flex-end;
+    justify-content: center;
+    height: 50vmin;
+    width: 50vmin;
 }
 
-.round{
-    font-size: 0.8rem;
+.bubble {
+    z-index: 0;
+    position: absolute;
+    width: 60vmin;
+}
+
+.emoji {
+    position: absolute;
+    width: 18vmin;
+    top: 0;
+    right: -10vmin;
+}
+
+.content{
     text-align: center;
     transform: rotate(12deg);
+<<<<<<< HEAD
 =======
     background-size: cover;
     background-position: center;
@@ -114,6 +151,8 @@ nav {
 .content{
     text-align: center;
     transform: rotate(12deg);
+=======
+>>>>>>> 8af341f8bccf5de7e9a8e522ec2a731508e3f776
     z-index: 1;
     font-family: "Roboto";
     font-weight: 900;
@@ -145,30 +184,117 @@ nav {
     margin-top: 5vmin;
     font-size: 15vmin;
     line-height: 5vmin;
+<<<<<<< HEAD
 >>>>>>> 2f8eeff9c5ace72a615dd96115c55dfe9a1113df
+=======
+
+>>>>>>> 8af341f8bccf5de7e9a8e522ec2a731508e3f776
 }
 
 #timer{
     text-align: center;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+    font-size: 15vmin;
+>>>>>>> 8af341f8bccf5de7e9a8e522ec2a731508e3f776
 }
 
-.indice{
+.tent{
     align-self: flex-end;
-    max-width: 150px;
+    margin-top: -5vmin;
+    margin-right: 6vw;
+    width: 30vmin;
 }
 
-.alignChoice{
+.gameInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Skranji';
+    color: white;
+    padding-top: 3vmin;
+}
+
+.info {
+    font-size: 6vmin;
+    font-weight: 400;
+    background: var(--background-nbScore);
+    width: 55vmin;
+    padding-top: 1vmin;
+    padding-bottom: 1vmin;
+    text-align: center;
+    border-radius: 5px;
+    border: 2px solid black;
+}
+
+.description {
+    font-size: 3vmin;
+    font-weight: 400;
+    background: var(--background-score);
+    width: 18vmin;
+    padding-top: 1vmin;
+    text-align: center;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border: 2px solid black;
+    border-top: none;
+}
+
+.battlefield{
+    height: 40vh;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    
+
 }
 
-.backgroundChoice{
+.myChoice{
+    display: flex;
+    flex-direction: column;
     background-color: var(--font-troop);
+    border: 2px solid black;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 5px;
 }
 
+.troop{
+    height: 13vmin;
+    width: 13vmin;
+    border: 2px solid black;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1vmin;
+}
+
+.troopImg {
+    width: 9vmin;
+}
+
+.button {
+    height: 6vmin;
+    width: 16vmin;
+    background-color: var(--fightBtn);
+    color: white;
+    font-size: 3.5vmin;
+    font-family: "Skranji";
+    font-weight: 400;
+    border: 2px solid black;
+    border-bottom: 3px solid black;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 6.5vmin;
+}
+
+<<<<<<< HEAD
 .oneTroop{
     border: black solid 1px;
 =======
@@ -268,6 +394,8 @@ nav {
     line-height: 6.5vmin;
 }
 
+=======
+>>>>>>> 8af341f8bccf5de7e9a8e522ec2a731508e3f776
 .vigor {
     padding-bottom: 5px;
 }
@@ -279,13 +407,21 @@ nav {
 .versus {
     font-family: "LondrinaSolid";
     font-size: 13vmin;
+<<<<<<< HEAD
 >>>>>>> 2f8eeff9c5ace72a615dd96115c55dfe9a1113df
+=======
+
+>>>>>>> 8af341f8bccf5de7e9a8e522ec2a731508e3f776
 }
 
 .score{
     align-self: center;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+
+>>>>>>> 8af341f8bccf5de7e9a8e522ec2a731508e3f776
     color: white;
     font-family: "Skranji";
     text-align: center;
@@ -319,7 +455,11 @@ nav {
     position: absolute;
     font-weight: 400;
     bottom: 5vmin;
+<<<<<<< HEAD
 >>>>>>> 2f8eeff9c5ace72a615dd96115c55dfe9a1113df
+=======
+
+>>>>>>> 8af341f8bccf5de7e9a8e522ec2a731508e3f776
 }
 
 .green{
@@ -334,7 +474,11 @@ nav {
     background-color: var(--red-troop);
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+
+>>>>>>> 8af341f8bccf5de7e9a8e522ec2a731508e3f776
 
 .black {
     background-color: var(--background-score);
@@ -352,4 +496,7 @@ nav {
     font-size: 10vmin;
     text-align: center;
 }
+<<<<<<< HEAD
 >>>>>>> 2f8eeff9c5ace72a615dd96115c55dfe9a1113df
+=======
+>>>>>>> 8af341f8bccf5de7e9a8e522ec2a731508e3f776

@@ -12,5 +12,5 @@ return [
     'fight' => ['FightController', 'fightOutcome', ['id'],],
     'reset' => ['ResetController', 'reset'],
     'tutorial' => ['TutorialController', 'index',],
-    'termsOfService' => ['TermsOfServiceController', 'index',],
+    'termsofservice' => ['TermsOfServiceController', 'index',],
 ];

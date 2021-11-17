@@ -3,8 +3,9 @@
 namespace App\Controller;
 
 use App\Model\CastleManager;
-use App\Model\SessionManager;
+use App\Model\SessionHandler;
 use App\Model\TroopManager;
+use App\Model\Trooper;
 
 class FightController extends AbstractController
 {
@@ -16,41 +17,24 @@ class FightController extends AbstractController
     */
     public function getTroops(): string
     {
-        session_start();
         // recovery of game info (score, round)
         $gameInfo = new CastleManager();
         $game = $gameInfo->selectGame();
         // recovery of player troop and creation of enemy troop
         $troopManager = new TroopManager();
         $troops = $troopManager->selectTroopPlayer();
-        $enemy = $troopManager->selectTroopEnemy((rand(1, 3)), 5);
-        // to stall troops in a session
-        $session = new SessionManager();
-        $_SESSION = $session->saveElement($enemy, $troops, $game);
+        $enemy = $troopManager->selectTroopEnemy((rand(0, 2)), 5);
+        // to save enemy troop in a session
+        $session = new SessionHandler();
+        $session->saveEnemy($enemy);
         //return to view get_ready
         return $this->twig->render('Fight/get_ready.html.twig', [
             'troops' => $troops,
-            'session' => $_SESSION,
+            'enemy' => $enemy,
             'game' => $game,
         ]);
     }
-    /**
-     * save castle data
-     */
-    private function saveCastle($newScore, $round): void
-    {
-        $save = new CastleManager();
-        $save->setRound($round);
-        $save->setScore($newScore);
-    }
-    /**
-     * Update and save vigor data
-     */
-    private function saveVigor($id): void
-    {
-        $updateVigor = new TroopManager();
-        $updateVigor->updateVigor($id);
-    }
+
     /**
      * resolution of the battle,
      * calculation of the new score, round, vigor of the troops
@@ -59,32 +43,44 @@ class FightController extends AbstractController
     public function fightOutcome($id)
     {
         //checks the coherence of $id
-        if ($id != 1 && $id != 2 && $id != 3) {
-            return $this->twig->render('Home/index.html.twig');
+        if ($id != (Trooper::ARCHER) && $id != (Trooper::PIKEMAN) && $id != (Trooper::KNIGHT)) {
+            header("Location: /");
+            return "";
         }
-        session_start();
-        // match troop type number id with table index
-        $id--;
-        //returns our data stored in the session
-        $trooperPlayer = $_SESSION['troops'][$id];
+        //recovery of troop enemy
+        $enemy = new SessionHandler();
+        $enemy = $enemy->getEnemy();
+        // recovery of player troop
+        $trooper = new TroopManager();
+        $troops = $trooper->selectTroopPlayer();
+        //return trooper before change
+        $vigorTroopPlayer = $troops[$id]->getVigor();
+        $imgVigorTroopPlayer = $troops[$id]->getImgVigor();
         //resolution of the battle
-        $result = $trooperPlayer->fight($_SESSION['saveEnemy']);
+        $result = $troops[$id]->fight($enemy);
+        //recovery score
+        $gameInfo = new CastleManager();
+        $game = $gameInfo->selectGame();
         //calculation of the new score of the castle, impossible to be negative
-        $newScore = intval($_SESSION['score']) + $result;
-        if ($newScore < 0) {
-            $newScore = 0;
-        }
+        $newScore = $game['score'] + $result;
         //increment the round, return new score and round in database
-        $round = intval($_SESSION['round']) + 1;
-        $this->saveCastle($newScore, $round);
+        $round = $game['round'] + 1;
+        $gameInfo->setScore($newScore);
+        $gameInfo->setRound($round);
         //updating the vigor of the troops and sending them to the database
-        $this->saveVigor($id);
+        $troops[$id]->modifyVigor($id, $troops);
+        $trooper->setVigor(Trooper::ARCHER, $troops[Trooper::ARCHER]->getVigor());
+        $trooper->setVigor(Trooper::PIKEMAN, $troops[Trooper::PIKEMAN]->getVigor());
+        $trooper->setVigor(Trooper::KNIGHT, $troops[Trooper::KNIGHT]->getVigor());
         // return to the fight.html.twig view
         return $this->twig->render('Fight/fight.html.twig', [
-            'trooperPlayer' => $trooperPlayer,
+            'vigorTroopPlayer' => $vigorTroopPlayer,
+            'imgVigorTroopPlayer' => $imgVigorTroopPlayer,
+            'trooperPlayer' => $troops[$id],
             'result' => $result,
             'newScore' => $newScore,
-            'session' => $_SESSION,
+            'score' => $game['score'],
+            'enemy' => $enemy,
         ]);
     }
 }

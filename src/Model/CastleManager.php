@@ -17,6 +17,9 @@ class CastleManager extends AbstractManager
     */
     public function setScore($score): void
     {
+        if ($score < 0) {
+            $score = 0;
+        }
         $statement = $this->pdo->prepare("UPDATE game SET score = :score");
         $statement->bindValue(':score', $score, \PDO::PARAM_INT);
         $statement->execute();
