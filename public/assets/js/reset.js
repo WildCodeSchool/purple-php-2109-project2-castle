@@ -1,10 +1,12 @@
 /**
- * création d'une pop-up de réinitialisation de la partie avec êtes 
- * vous sûr de vouloir quitter
+ * creation of a game reset pop-up with are
+ * you sure you want to leave and redirect to the home page 
  */
-$("#yesno").easyconfirm({locale: { title: 'Select Yes or No', button: ['No','Yes']}});
-$("#yesno").click(function() {
-	alert("You clicked yes");
-});
+function scriptReset()
+{
+    if ( confirm( "Are you sure you want to leave the game?" ) ) {
+        document.location.href = '/reset';
+    }
+}
 
 
