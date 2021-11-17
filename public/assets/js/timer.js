@@ -32,5 +32,5 @@
      }
  
  }
- // setInterval calls the reduceTime function every 1000 ms (1 second) 
- setInterval(reduceTime, 1000); 
+ // setInterval calls the reduceTime function every 1000 ms (1 second)
+ setInterval(reduceTime, 1000);

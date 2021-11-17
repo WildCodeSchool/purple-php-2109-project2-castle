@@ -1,0 +1,302 @@
+
+.sky{
+    display: flex;
+    background-image: url(../images/mobile/sky.png);
+    background-size: cover;
+
+    background-position: center;
+    height: 40vh;
+}
+
+.navBlock {
+    width: 100%;
+    position: absolute;
+}
+
+nav {
+    display: flex;
+    height: 25vmin;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 5vmin;
+    margin-right: 5vmin;
+}
+
+.btn {
+    background: var(--greyBtn);
+    height: 11vmin;
+    width: 11vmin;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    border: 2px solid black;
+}
+
+.btnImg {
+    width: 7vmin;
+    height: 7vmin;
+}
+
+.mainLogo {
+    width: 25vmin;
+    height: 12vmin;
+
+}
+
+.grass{
+    display: flex;
+    flex-direction: column;
+    background-image: url(../images/mobile/grass.png);
+    background-size: cover;
+
+    background-position: center;
+    height: 60vh;
+}
+
+.castle{
+    height: 35vmin;
+    align-self: flex-end;
+    margin-bottom: -20px;
+    margin-left: 6vw;
+}
+
+.narration {
+    display: flex;
+    align-self: flex-end;
+    justify-content: center;
+    height: 50vmin;
+    width: 50vmin;
+}
+
+.bubble {
+    z-index: 0;
+    position: absolute;
+    width: 60vmin;
+}
+
+.emoji {
+    position: absolute;
+    width: 18vmin;
+    top: 0;
+    right: -10vmin;
+}
+
+.content{
+    text-align: center;
+    transform: rotate(12deg);
+    z-index: 1;
+    font-family: "Roboto";
+    font-weight: 900;
+    text-transform: uppercase;
+    padding-top: 11.5vw;
+    width: 85vmin;
+}
+
+.result {
+    padding-top: 9vw;
+}
+
+.content h3 {
+    font-size: 7vmin;
+    line-height: 7vmin;
+}
+
+.content h2 {
+    font-size: 5vmin;
+    line-height: 3vmin;
+}
+
+.content h1 {
+    font-size: 7vmin;
+}
+
+.content h4 {
+    margin-left: 0;
+    margin-top: 5vmin;
+    font-size: 15vmin;
+    line-height: 5vmin;
+
+}
+
+#timer{
+    text-align: center;
+
+    font-size: 15vmin;
+}
+
+.tent{
+    align-self: flex-end;
+    margin-top: -5vmin;
+    margin-right: 6vw;
+    width: 30vmin;
+}
+
+.gameInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Skranji';
+    color: white;
+    padding-top: 3vmin;
+}
+
+.info {
+    font-size: 6vmin;
+    font-weight: 400;
+    background: var(--background-nbScore);
+    width: 55vmin;
+    padding-top: 1vmin;
+    padding-bottom: 1vmin;
+    text-align: center;
+    border-radius: 5px;
+    border: 2px solid black;
+}
+
+.description {
+    font-size: 3vmin;
+    font-weight: 400;
+    background: var(--background-score);
+    width: 18vmin;
+    padding-top: 1vmin;
+    text-align: center;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border: 2px solid black;
+    border-top: none;
+}
+
+.battlefield{
+    height: 40vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+.myChoice{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--font-troop);
+    border: 2px solid black;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 5px;
+}
+
+.troop{
+    height: 13vmin;
+    width: 13vmin;
+    border: 2px solid black;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1vmin;
+}
+
+.troopImg {
+    width: 9vmin;
+}
+
+.button {
+    height: 6vmin;
+    width: 16vmin;
+    background-color: var(--fightBtn);
+    color: white;
+    font-size: 3.5vmin;
+    font-family: "Skranji";
+    font-weight: 400;
+    border: 2px solid black;
+    border-bottom: 3px solid black;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 6.5vmin;
+}
+
+.vigor {
+    padding-bottom: 5px;
+}
+
+.vigorImg {
+    width: 17vmin;
+}
+
+.versus {
+    font-family: "LondrinaSolid";
+    font-size: 13vmin;
+
+}
+
+.score{
+    align-self: center;
+
+    color: white;
+    font-family: "Skranji";
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.score h3 {
+    height: 5vmin;
+    width: 18vmin;
+    background: var(--background-score);
+    font-size: 3vmin;
+    line-height: 5vmin;
+    border: 2px solid black;
+    border-radius: 5px;
+    margin-top: 5px;
+    bottom: 13vmin;
+    position: absolute;
+    font-weight: 400;
+    bottom: 13vmin;
+}
+
+.score h1 {
+    height: 8vmin;
+    width: 30vmin;
+    background: var(--background-nbScore);
+    font-size: 6vmin;
+    border: 2px solid black;
+    border-radius: 5px;
+    position: absolute;
+    font-weight: 400;
+    bottom: 5vmin;
+
+}
+
+.green{
+    background-color: var(--green-troop);
+}
+
+.yellow{
+    background-color: var(--yellow-troop);
+}
+
+.red {
+    background-color: var(--red-troop);
+}
+
+
+.black {
+    background-color: var(--background-score);
+}
+
+.enemy {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.enemy h1 {
+    font-family: "Skranji";
+    font-weight: 700;
+    font-size: 10vmin;
+    text-align: center;
+}
