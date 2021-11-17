@@ -1,39 +1,36 @@
-/**
- * create a timer to manage the display of the battle
- */
-let time = 4;
-//selection of the various elements that will be modified or added 
-const timerElement = document.getElementById("timer");
-const enemy = document.getElementById("enemy");
-const changeEnemy = "<img src={{ enemy.image }} alt='asset enemy'>";
-const win = "<img class='win' src='assets/images/mobile/happy_emoji.png' alt='emoji win'>";
-const loose = "<img class='loose' src='assets/images/mobile/sad_emoji.png' alt='emoji loose'>";
-// the function that will be applied under the effect of the timer 
-function reduceTime() {
-    timerElement.innerText = time;
-    time--;
-    switch (time) {
-        case 3:
-            timerElement.innerText = time;
-            break;
-        case 2:
-            timerElement.innerText = time;
-            break;
-        case 1:
-            timerElement.innerText = time;
-            break;
-        case 0:
-            enemy.innerHTML = changeEnemy;
-            if (result < 0) {
-                timerElement.innerHTML = loose;
-            } else {
-                timerElement.innerHTML = win;
-            }
-            break;
-            // the counter continues to rotate and a -1 returns on getready
-        case -1:
-            document.location.href = '/getready';
-    }
-}
-// setInterval call the reduceTime function every 1000 ms (1 second)
-setInterval(reduceTime, 1000);
+/*** Creates a timer for the fight view*/
+
+ let time = 4;
+ // DOM
+ const timerElement = document.getElementById("timer");
+ const win = "<h3>HURRAY!<br>WELL DONE</h3><img class='emoji win' src='assets/images/mobile/happy_emoji.png' alt='emoji win'>";
+ const loose = "<h3>OH NO!<br>WE'VE LOST</h3><img class='emoji loose' src='assets/images/mobile/sad_emoji.png' alt='emoji loose'>";
+
+ // Function that will be executed
+ function reduceTime() {
+     timerElement.innerHTML = "<h4>" + time + "</h4>";
+     time--;
+     switch (time) {
+         case 3:
+             timerElement.innerHTML = "<h4>" + time + "</h4>";
+             break;
+         case 2:
+             timerElement.innerHTML = "<h4>" + time + "</h4>";
+             break;
+         case 1:
+             timerElement.innerHTML = "<h4>" + time + "</h4>";
+             break;
+         case 0:
+             // Result is actually a twig element, defined inside the view
+             if (result < 0) {
+                 timerElement.innerHTML = loose;
+             } else {
+                 timerElement.innerHTML = win;
+             }
+             document.location.href = '/getready';
+             break;
+     }
+ 
+ }
+ // setInterval calls the reduceTime function every 1000 ms (1 second)
+ setInterval(reduceTime, 1000);
