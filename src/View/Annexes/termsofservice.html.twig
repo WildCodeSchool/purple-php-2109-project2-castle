@@ -54,8 +54,9 @@
         <p>Acces to the site:</p>
         <br>
         <p>The site is accessible at any place, 7 days a week, except in case of force majeure, scheduled or unscheduled interruption that could result from a maintenance operation. In case of modification, interruption or suspension of the site, the editor cannot be held responsible.</p>
-        </div>
+        <button onclick="scriptReset()">Reset game</button>
     </div>
-    
-
+{% endblock %}
+{% block javascript %}
+<script src="assets/js/reset.js"></script>
 {% endblock %}
