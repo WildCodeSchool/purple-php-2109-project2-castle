@@ -10,6 +10,7 @@ return [
     '' => ['HomeController', 'index',],
     'getready' => ['FightController', 'getTroops',],
     'fight' => ['FightController', 'fightOutcome', ['id'],],
+    'reset' => ['ResetController', 'reset'],
     'tutorial' => ['TutorialController', 'index',],
     'termsofservice' => ['TermsOfServiceController', 'index',],
 ];
