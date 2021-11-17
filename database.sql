@@ -1,6 +1,6 @@
-DROP TABLE `game`;
+DROP TABLE `game` IF EXISTS;
 
-DROP TABLE `trooper`;
+DROP TABLE `trooper` IF EXISTS;
 
 CREATE TABLE `game` (
   `id` INT NOT NULL AUTO_INCREMENT,
