@@ -11,6 +11,5 @@ return [
     'getready' => ['FightController', 'getTroops',],
     'fight' => ['FightController', 'fightOutcome', ['id'],],
     'tutorial' => ['TutorialController', 'index',],
-    'termsOfService' => ['TermsOfServiceController', 'index',],
-
+    'termsofservice' => ['TermsOfServiceController', 'index',],
 ];

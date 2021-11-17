@@ -20,7 +20,7 @@ hr{
     width: 70%;
     height: 0.6vh;
     margin: 0.2vh auto;
-    background-color: rgba(44, 7, 7, 0.993);
+    background-color: var(--tutorial-text);
     border: none;
 }
 
@@ -101,7 +101,7 @@ hr{
     height: 7vh;
     margin : 5vh auto 0 auto ;
     padding-bottom: 1em;
-    background-color:rgba(44, 7, 7, 0.993);
+    background-color:var(--tutorial-text);
     text-align: center;
     color: white;
     border-top-left-radius: 0.5em;
@@ -144,4 +144,12 @@ hr{
     border-radius: 50%;
     float: right;
     shape-outside: circle();    
+}
+
+#gamepocket {
+    display:flex;
+    height: 15vh;
+    width: 15vh;
+    margin-left: auto;
+    margin-right: auto;
 }

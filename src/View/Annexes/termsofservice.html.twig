@@ -9,7 +9,7 @@
     {# Div using grid with background sky, return button, logo and another button (non displayed) #}
     <div class="sky">
         <div class="returnbutton">
-            <img id="returnbutton" src="/assets/images/mobile/return_icon.png" alt="return to home">
+            <a href="/"><img id="returnbutton" src="/assets/images/mobile/return_icon.png" alt="return to home"></a>
         </div>
         <div class="logo">
             <img id="logo" src="/assets/images/mobile/logo.png" alt="logo Defend the Castle">
@@ -18,9 +18,10 @@
         </div>
     </div>
     {# Div which only displays the castle #}
-    <div class="castle">
-            <img id="castle" src="/assets/images/mobile/battle_castle.png" alt="Castle">
-        </div>
+    <picture class="castle">
+        <source id="castle" media="(max-width:650px)" srcset="/assets/images/mobile/troop_choice_castle.png">
+        <img id="castle" src="/assets/images/desktop/desktop_castle_troop_choice.png" alt="Castle">
+    </picture>
     {# Div with background grass and bloc titles and text #}
     <div class="grass">
         <div class="title">
@@ -37,9 +38,16 @@
         <br>
         <p>Bruno F.<br>Elodie D.<br>Caroline C.<br>Soufiane A.O.<br>Sébastien V.</p>
         <br>
+        <p>Our game is also referenced in the Game Pocket plateform</p>
+        <br>
+        <img id="gamepocket" src="/assets/images/mobile/gamepocket.png" alt="Game Pocket">
+        <br>
         <hr>
         <h1>LEGAL INFORMATION</h1>
         <hr>
+        <br>
+        <p>Music : "Fives Armies" by Kevin MacLeod (incompetech.com) . Under Creative Commons licence<br>
+        http://creativecommons.org/licenses</p>
         <br>
         <p>Site host : SiteGround London (UK)<br>SiteGround Hosting Ltd.<br>3rd Floor, 11-12 St. James's Square<br>London SW1Y 4LB<br>+44 800 8620379 </p>
         <br>

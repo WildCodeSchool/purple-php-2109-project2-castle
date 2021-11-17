@@ -6,6 +6,6 @@ class TermsOfServiceController extends AbstractController
 {
     public function index(): string
     {
-        return $this->twig->render('Annexes/termsOfService.html.twig');
+        return $this->twig->render('Annexes/termsofservice.html.twig');
     }
 }
