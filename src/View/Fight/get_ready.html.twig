@@ -13,7 +13,7 @@
 <nav>
     <a href="/"><p class="btn"><img class="btnImg" src="assets/images/mobile/return_icon.png" alt=""></p></a>
     <a href="/"><img class="mainLogo" src="assets/images/mobile/logo.png" alt="Logo of Defend The Castle"></a>
-    <p class="btn" id="music-button" onclick="playPause()"><img class="btnImg" src="assets/images/mobile/music_icon.png" alt="Mute"></p>
+    <p class="btn" onclick="playPause()"><img class="btnImg" id="music-button" src="assets/images/mobile/music_icon.png" alt="Mute"></p>
 </nav>
 </div>
 <section class="sky">
@@ -32,10 +32,7 @@
 <section class="grass">
     <picture class="tent">
         <source srcset="assets/images/desktop/battle_tent.png" media="(min-width: 530px)">
-        <img class="tent" src="assets/images/mobile/tent.png" alt="image enemy indice ">
-        <!-- When us5-Fight is updated, delete the previous line and uncomment:
-        <img class="tent" src=""{{ enemy.indice }} alt="image enemy indice ">
-        -->
+        <img class="tent" src={{ enemy.indice }} alt="image enemy indice ">
     </picture>
     <div class="battlefield">
         <div class="myChoice">
@@ -51,22 +48,13 @@
                 <div class="troop green">
                     {% endif %}
                     {% if troop.vigor  == 0 %}
-                    <img class="troopImg" src="assets/images/mobile/archer.png" alt="asset troop">
-                    <!-- When us5-Fight is updated, delete the previous line and uncomment:
                     <img class="troopImg" src={{ troop.image}} alt="asset troop">
-                    -->
                     {% else %}
-                    <a href="fight?id={{ troop.type }}"><img class="troopImg" src="assets/images/mobile/archer.png" alt="asset troop"></a>
-                    <!-- When us5-Fight is updated, delete the previous line and uncomment:
                     <a href="fight?id={{ troop.type }}"><img class="troopImg" src={{ troop.image}} alt="asset troop"></a>
-                    -->
                     {% endif %}
                 </div>
                 <p class="vigor">
-                    <img class="vigorImg" src="assets/images/mobile/vigor5-5.png" alt="asset vigor troop {{ troop.vigor}} / 5 ">
-                    <!-- When us5-Fight is updated, delete the previous line and uncomment:
                     <img class="vigorImg" src={{ troop.imgVigor }} alt="asset vigor troop {{ troop.vigor}} / 5 ">
-                    -->
                 </p>
             </div>
             {% endfor %}
@@ -74,16 +62,12 @@
         <h1 class="versus">- VS -</h1>
         <div class="enemy">
             <h1 class="troop green">?</h1>
-            <p><img class="vigorImg" src="assets/images/mobile/vigor5-5.png" alt="asset vigor enemy {{ enemy.vigor }} / 5"></p>
-            <!-- When us5-Fight is updated, delete the previous line and uncomment:
             <p><img class="vigorImg" src={{ enemy.imgVigor }} alt="asset vigor enemy {{ enemy.vigor }} / 5"></p>
-            -->
         </div>
     </div>
     <div class="score">
         <h3>SCORE</h3>
         <h1>~ {{ game.score }} ~</h1>
     </div>
-
 </section>
 {% endblock %}
