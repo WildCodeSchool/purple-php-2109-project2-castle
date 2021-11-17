@@ -23,7 +23,7 @@ nav {
 /*background for mobile, portrait*/
 body {
     background-image: url("/assets/images/mobile/home_background.png");
-    max-height: 100vh;
+    height: 100vh;
     background-repeat: no-repeat;
     background-size: cover;
     margin: 0;
