@@ -14,7 +14,15 @@
 </head>
 
 <body>
-    {% block content %}hello{% endblock %}
+    {% block content %}{% endblock %}
+    <audio id="audio" loop>
+        <!--type = audio/MIME-->
+        <source src="/assets/music/five-armies.aac" type="audio/aac">
+        <source src="/assets/music/five-armies.mp3" type="audio/mpeg">
+        <source src="/assets/music/five-armies.ogg" type="audio/ogg">
+        <p>Your browser does not support audio items. You should consider to update it.</p>
+    </audio>    
+    <script src="/assets/js/playPauseMusic.js"></script>
     {% block javascript %}{% endblock %}
 </body>
 </html>
