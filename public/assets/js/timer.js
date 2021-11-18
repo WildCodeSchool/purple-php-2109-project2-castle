@@ -27,10 +27,13 @@
              } else {
                  timerElement.innerHTML = win;
              }
-             document.location.href = '/getready';
+             clearInterval(interval);
+             setTimeout(() => {
+                document.location.href = '/getready';
+             }, 2000);
              break;
      }
  
  }
  // setInterval calls the reduceTime function every 1000 ms (1 second)
- setInterval(reduceTime, 1000);
+var interval = setInterval(reduceTime, 1000);
