@@ -13,4 +13,7 @@ return [
     'reset' => ['ResetController', 'reset'],
     'tutorial' => ['TutorialController', 'index',],
     'termsofservice' => ['TermsOfServiceController', 'index',],
+    'admin' => ['AdminController', 'password'],
+    'admin/pass' => ['AdminController', 'checking'],
+    'logout' => ['AdminController', 'logOut'],
 ];
