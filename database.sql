@@ -24,11 +24,9 @@ INSERT INTO `trooper` (`type`, `vigor`) VALUES (2, 5);
 
 CREATE TABLE `admin` (
   `id` INT NOT NULL AUTO_INCREMENT,
-  `pass` VARCHAR(20) NOT NULL,
-  `logged` BOOL NOT NULL,
+  `user` VARCHAR(255) NOT NULL,
+  `pass` VARCHAR(255) NOT NULL,
   PRIMARY KEY (`id`));
 
-
-
-INSERT INTO `admin` (`pass`, `logged`) VALUES ('dearinstructor' , false);
+INSERT INTO `admin` (`user`, `pass`) VALUES ('admin', 'dearinstructor');
 
