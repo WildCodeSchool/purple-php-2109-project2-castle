@@ -1,11 +1,12 @@
+
 <!doctype html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>{% block title %}{% endblock %}</title>
+    <link rel="icon" href="/assets/images/favicon.ico">
+    <title>{% block title %}{% endblock %}| Defend The Castle</title>
 
     <link rel="stylesheet" href="/assets/css/style.css">
     {% block stylesheet %}{% endblock %}
@@ -14,8 +15,14 @@
 
 <body>
     {% block content %}{% endblock %}
+    <audio id="audio" loop>
+        <!--type = audio/MIME-->
+        <source src="/assets/music/five-armies.aac" type="audio/aac">
+        <source src="/assets/music/five-armies.mp3" type="audio/mpeg">
+        <source src="/assets/music/five-armies.ogg" type="audio/ogg">
+        <p>Your browser does not support audio items. You should consider to update it.</p>
+    </audio>    
+    <script src="/assets/js/playPauseMusic.js"></script>
     {% block javascript %}{% endblock %}
 </body>
 </html>
-
-

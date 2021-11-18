@@ -1,17 +1,17 @@
-# Simple MVC
+# DefendTheCastle
 
-## Description
+Project 2 of the dev (php) training at the Wild Code School (Sept 2021 class)
 
-This repository is a simple PHP MVC structure from scratch.
+## Description: 
+For our second project at the Wild Code School, we were asked to make a game, based on a "defend the castle" game. We had to make the development in php for the back-end and we were quite free for the front-end as long as you are passionate about Twig views. All this on a simple MVC structure. Our trainer gave us the basics of this structure. He uses nice providers/libraries such as Twig and Grumphp.
 
-It uses some cool vendors/libraries such as Twig and Grumphp.
-For this one, just a simple example where users can choose one of their databases and see tables in it.
+The mechanics of our game are as follows: all games are cooperative, all players play to defend their castle with the same castle. At each turn a player will select a troop, which will fight an enemy troop. At the end of the battle, the difference in power between the two battles will be added or subtracted from the castle's score.
 
-## Steps
-
+## Steps:
 1. Clone the repo from Github.
 2. Run `composer install`.
 3. Create *config/db.php* from *config/db.php.dist* file and add your DB parameters. Don't delete the *.dist* file, it must be kept.
+
 ```php
 define('APP_DB_HOST', 'your_db_host');
 define('APP_DB_NAME', 'your_db_name');
@@ -23,38 +23,26 @@ define('APP_DB_PASSWORD', 'your_db_password');
 6. Go to `localhost:8000` with your favorite browser.
 7. From this starter kit, create your own web application.
 
-### Windows Users
+### Windows Users:
 
 If you develop on Windows, you should edit you git configuration to change your end of line rules with this command :
 
 `git config --global core.autocrlf true`
 
-## Example 
-
-An example (a basic list of items) is provided (you can load the *simple-mvc.sql* file in a test database). The accessible URLs are :
-
-* Home page at [localhost:8000/](localhost:8000/)
-* Items list at [localhost:8000/items](localhost:8000/items)
-* Item details [localhost:8000/items/show?id=:id](localhost:8000/item/show?id=2)
-* Item edit [localhost:8000/items/edit?id=:id](localhost:8000/items/edit?id=2)
-* Item add [localhost:8000/items/add](localhost:8000/items/add)
-* Item deletion [localhost:8000/items/delete?id=:id](localhost:8000/items/delete?id=2)
-
-You can find all these routes declared in the file `src/routes.php`. This is the very same file where you'll add your own new routes to the application.
-
-## How does URL routing work ?
+### How does URL routing work ?
 
 ![simple_MVC.png](.tours/simple_MVC.png)
 
+We have now entered our different routes (url) in the file `route.php` as well as the controller and the method to call. Each controller will call the corresponding manager according to our needs. The manager will return the information requested by the controller from the database or not, and the controller will send it back to our Twig view.
 
-## Ask for a tour !
+### Authors:
 
-<img src="https://pixabay.com/get/g0331c2b48fc494e8b7e78620f44e084095ee6d103f77538ce22e091e5bdb76bc9348ac4d544173c0ca92dbedb7937e50c941345acb2136df97dbc21ef5f652bab708e28c6edca9fb697d3cf931d1532e_640.jpg" alt="Guided tour" width="150"/>
+#### Developers
+* Caroline Crépin
+* Élodie Daubié
+* Soufiane Aït Ouarraou
+* Sébastien Violante
+* Bruno Fernandes
 
-We prepare a little guided tour to start with the simple-MVC.
-
-To take it, you need to install the `Code Tour` extension for Visual Studio Code : [Code Tour](https://marketplace.visualstudio.com/items?itemName=vsls-contrib.codetour)
-
-It will give access to a new menu on your IDE where you'll find the different tours about the simple-MVC. Click on play to start one : 
-
-![menu](.tours/code_tour_menu.jpg)
+#### Formateur:
+* Romain Clair

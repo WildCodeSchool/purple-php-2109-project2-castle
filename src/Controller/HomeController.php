@@ -9,6 +9,8 @@
 
 namespace App\Controller;
 
+use App\Model\SessionHandler;
+
 class HomeController extends AbstractController
 {
     /**
@@ -21,6 +23,9 @@ class HomeController extends AbstractController
      */
     public function index()
     {
-        return $this->twig->render('Home/index.html.twig');
+        session_start();
+        return $this->twig->render('Home/index.html.twig', [
+            'session' => $_SESSION,
+        ]);
     }
 }

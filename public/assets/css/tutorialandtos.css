@@ -1,0 +1,190 @@
+* {
+    margin:0;
+    padding: 0;
+}
+
+h1, h2{
+    font-size: 4vmin;
+    line-height: 7vh;
+    margin: 0;
+    text-align: center;
+    font-family: "Roboto";
+}
+
+h1 {
+    color: var(--light-text);
+}
+
+h2 {
+    color: var(--tutorial-text); 
+}
+
+form, .form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+input {
+    font-size: 3vmin;
+    text-align: center;
+    font-family: "Roboto";
+    color: var(--tutorial-text);
+}
+
+p, label{
+    margin-top: 1vmin;
+    font-size: 3vmin;
+    text-align: justify;
+    font-family: "Roboto";
+    color: var(--tutorial-text);
+}
+
+.tos-text p {
+    text-align: center;
+}
+
+hr{
+    width: 70%;
+    height: 0.6vh;
+    margin: 0.2vh auto;
+    background-color: var(--tutorial-text);
+    border: none;
+}
+
+.sky{
+    position: relative;
+    display:grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: 40vh;
+    background: url('../images/mobile/sky.png');
+    background-size: cover;
+}
+
+.logo{
+    display:block;
+    align-items: center;
+    position:relative;
+    text-align: center;
+}
+
+#logo{
+    height: 10vh;
+    margin-top: 2vh;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.castle{
+    display:relative;
+    width: 100%;
+    margin-top: -25vmin;
+    margin-left: auto;
+    margin-right: auto;
+    background-size: cover;
+    position: absolute;
+    text-align: center;
+    z-index: 1;
+}
+
+#castle{
+    width:25vmin;
+}
+
+.grass{
+    height: 60vh;
+    position: relative;
+    background: url('../images/mobile/grass.png');
+    background-size: cover;
+    overflow: auto;
+}
+
+.title {
+    width: 60%;
+    height: 7vh;
+    margin : 5vh auto 0 auto ;
+    padding-bottom: 1em;
+    background-color:var(--tutorial-text);
+    text-align: center;
+    color: (--light-text);
+    border-top-left-radius: 0.5em;
+    border-top-right-radius: 0.5em;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 85%;
+    height:45vh;
+    margin: 0 auto;
+    border: 0.2em solid rgb(68, 59, 59);
+    border-radius: 0.5em;
+    box-sizing: border-box;
+    background :#ffa;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.5);
+    text-align: justify;
+    padding: 1vh 5vh ;
+    overflow-y: scroll;
+}
+
+.circleone {
+    width: 10vh;
+    height:10vh;
+    margin: 1vh;
+    background: url('../images/mobile/roi.png');
+    background-size: 100% 100%;
+    border-radius: 50%;
+    float: left;
+    shape-outside: circle();
+    
+}
+
+.circletwo {
+    width: 15vh;
+    height:15vh;
+    margin: 1vh;
+    background: url('../images/mobile/round.png');
+    background-size: 100% 100%;
+    border-radius: 50%;
+    float: right;
+    shape-outside: circle();    
+}
+
+#gamepocket {
+    display:flex;
+    height: 15vh;
+    width: 15vh;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.reset, .submit{
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    width: 10em;
+    height: 3em;
+    margin-top: 3em;
+    margin-left: auto;
+    margin-right: auto;
+    background: var(--tutorial-text);
+    border-radius: 1em;
+    font-family: 'Skranji';
+    color:var(--light-text);
+    font-size:medium;
+}
+
+form, .form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+input {
+    font-size: 3vmin;
+    text-align: center;
+    font-family: "Roboto";
+    color: var(--tutorial-text);
+}

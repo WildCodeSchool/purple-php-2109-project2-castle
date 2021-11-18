@@ -1,0 +1,174 @@
+@media only screen and (min-width : 530px) {
+
+    .sky {
+        height: 60vh;
+    }
+
+    .btn {
+        height: 5vmin;
+        width: 5vmin;
+        border: 3px solid black;
+    }
+
+    .btnImg {
+        width: 3vmin;
+        height: 3vmin;
+    }
+
+    .mainLogo {
+        width: 20vmin;
+        height: 10vmin;
+    }
+
+    nav {
+        display: flex;
+        height: 25vmin;
+        align-items: flex-start;
+        justify-content: space-between;
+        margin-left: 5vmin;
+        margin-right: 5vmin;
+        margin-top: 5vmin;
+    }
+
+    .grass {
+        height: 40vh;
+        background-image: url(../images/desktop/troop_grass.png);
+    }
+
+    .castle {
+        margin-left: 10vw;
+        margin-bottom: -3vmin;
+        width: 20vmin;
+    }
+
+    .castleImg {
+        width: 30vmin;
+    }
+
+    .emoji {
+        width: 10vmin;
+        top: 3vmin;
+        right: -3vmin;
+    }
+
+    .narration {
+        align-items: flex-end;
+        margin-bottom: 14vmin;
+    }
+
+    .bubble {
+        width: 35vmin;
+    }
+
+    .content {
+        width: 30vmin;
+        margin-bottom: 13.5vmin;
+        margin-left: 5vmin;
+    }
+
+    .content h2 {
+        font-size: 3vmin;
+        line-height: 3vmin;
+    }
+
+    .content h1 {
+        font-size: 4vmin;
+    }
+
+    .content h4 {
+        margin-left: -3vmin;
+        margin-top: -7vmin;
+        font-size: 10vmin;
+        line-height: 5vmin;
+    }
+
+    .result h3 {
+        font-size: 4.5vmin;
+        line-height: 4.5vmin;
+    }
+
+    .tent{
+        margin-top: -8vmin;
+        margin-right: 5vw;
+        width: 50vmin;
+    }
+
+    .gameInfo {        
+        padding-top: 0;
+        margin-top: -15vmin;
+    }
+
+    .info {
+        font-size: 3vmin;
+        width: 30vmin;
+        border: 3px solid black;
+    }
+
+    .description {
+        font-size: 2vmin;
+        width: 10vmin;
+        padding-top: 0.3vmin;
+        border: 3px solid black;
+        border-top: none;
+    }
+
+    .battlefield {
+        margin: 0 75px;
+        margin-bottom: 10vmin;
+        align-items: center;
+    }
+
+    .myChoice {
+        flex-direction: row;
+        border: 3px solid black;
+    }
+
+    .oneTroop {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0 0.5vmin;
+    }
+
+    .troop{
+        height: 8vmin;
+        width: 8vmin;
+        border: 3px solid black;
+        flex-direction: column;
+    }
+
+    .troopImg {
+        width: 5vmin;
+    }
+
+    .vigorImg {
+        width: 9vmin;
+    }
+
+    .versus {
+        font-size: 6vmin;
+    }
+
+    .score h3{
+        height: 4vmin;
+        width: 10vmin;
+        font-size: 2vmin;
+        line-height: 3vmin;
+        bottom: 7vmin;
+        border: 3px solid black;
+    }   
+
+    .score h1 {
+        height: 5vmin;
+        width: 20vmin;
+        font-size: 4vmin;
+        bottom: 3vmin;
+        border: 3px solid black;
+    }
+
+    .enemy h3 {
+        font-size: 6vmin;
+    }
+
+}

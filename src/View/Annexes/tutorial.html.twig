@@ -1,0 +1,70 @@
+{% extends 'layout.html.twig' %}
+{% block title %} Tutorial {{parent()}}{% endblock %}
+{% block stylesheet %}
+<link rel="stylesheet" href="../assets/css/tutorialandtos.css">
+
+{% endblock %}
+
+{% block content %}
+    {# Div using grid with background sky, return button, logo and another button (non displayed) #}
+    <div class="sky">
+        <div class="navBlock">
+            <nav>
+                {#to link a page, add url like example /file/page#}
+                <a href="/" class="button"><img src="/assets/images/mobile/return_icon.png" alt="return to home" ></a>
+                <a href="/"><img class="mainLogo" src="assets/images/mobile/logo.png" alt="Logo of Defend The Castle"></a>
+                <a class="button" onclick="playPause()"><img class="imageButton" src="/assets/images/mobile/mute_icon.png" alt="music icon" id="music-button"></a>    
+            </nav>
+        </div>
+    </div>
+    {# Div which only displays the castle #}
+    <picture class="castle">
+        <source media="(max-width:650px)" srcset="/assets/images/mobile/troop_choice_castle.png">
+        <img id="castle" src="/assets/images/desktop/desktop_castle_troop_choice.png" alt="Castle">
+    </picture>
+        
+    {# Div with background grass and bloc titles and text #}
+    <div class="grass">
+        <div class="title">
+            <h1>RULES</h1>
+        </div>
+        <div class="container">
+            <hr>
+            <h2>Presentation</h2>
+            <hr>
+            <br>
+            {# Div dedicated to display round image #}
+            <div class="circleone">
+            </div>
+            <p>“Lord, the castle is about to be attacked..." 
+            You look up from your papers, one of the castle guards comes running towards you, out of breath. He says again: 
+            "My lord, the enemy is approaching from the east, we are under attack! " . </p>
+            <br>
+            <p><strong>It is time for you to defend your castle</strong>. After having quickly gathered your officers and taken stock of the situation, you notice that the enemy is sending you troops in waves. A quick consultation with your advisors brings you three possible solutions. Which troop are you going to send into battle? 
+            </p>
+            <br><br>
+            <hr>
+            <h2>How to play...and not to loose</h2>
+            <hr>
+            <br>
+            <div class="circletwo">
+            </div>
+            <p>In this game you will have <strong> choose the type of troop to send into battle</strong>, each type having a higher strength ratio than another type. Your warlord informs you: 
+            <strong>"Archers are stronger against pikemen. 
+            Pikemen are stronger against knights. 
+            Knights are stronger against archers."</strong></p>
+            <br>
+            <p>Your prime minister intervenes: <strong>"Be careful with the fatigue of your troops, it makes them less effective in combat."</strong></p><br><p>
+            Indeed you will have to watch the fatigue rate of your troops, materialized by 5 colored squares that we will call vigor. In each round of combat <strong>the troop used loses 1 point of vigor</strong>, which would result in reducing its power. Moreover, a troop that has used up all its vigor points will no longer be able to fight and will have to rest. <strong>The vigor goes up by 1 point every 2 turns for the unused troops.</strong> 
+            In this game you will have to use some strategy, and rely on luck if you want to get out of it.</p><br><p> In each round <strong>the enemy will send you a type of troop in full form</strong>, it's up to you to play wisely by countering this attack with the right type of troop while sparing your men. At the end of each battle a combat result will be calculated and will <strong>increase or decrease the score of your castle</strong> depending on whether you have won or lost.
+            While you are deep in thought, you feel a hand gently resting on your forearm. Your warlord announces... 
+            "My lord, the enemy is here, you must choose now."
+            </p>
+            <br>
+            <p>It's up to you!
+            </p>
+        </div>
+    </div>
+    
+
+{% endblock %}

@@ -1,0 +1,79 @@
+{% extends 'layout.html.twig' %}
+
+{% block stylesheet %}
+<link rel="stylesheet" href="/assets/css/get_ready.css">
+<link rel="stylesheet" href="/assets/css/get_ready_desktop.css">
+{% endblock %}
+
+{% block title %}Choose your troop{% endblock %}
+ 
+{% block content %}
+<div class="navBlock">
+    <nav>
+        {#to link a page, add url like example /file/page#}
+        <a href="/" class="button"><img  src="/assets/images/mobile/return_icon.png" alt="return to home" ></a>
+        <a href="/"><img class="mainLogo" src="assets/images/mobile/logo.png" alt="Logo of Defend The Castle"></a>
+        <a class="button" onclick="playPause()"><img class="imageButton" src="/assets/images/mobile/mute_icon.png" alt="music icon" id="music-button"></a>    
+    </nav>
+</div>
+<section class="sky">
+    <picture class="castle">
+        <source srcset="assets/images/desktop/desktop_castle_troop_choice.png" media="(min-width: 530px)">
+        <img class= "castleImg" src="assets/images/mobile/troop_choice_castle.png" alt="Castle open door">
+    </picture>
+    <div class="narration">
+        <img class="bubble" src="assets/images/mobile/bubble.png" alt="">
+            <div class="content">
+                <h2>Get Ready for</h2>
+                <h1>Round {{ game.round }}</h1>
+            </div>
+    </div>
+</section>
+<section class="grass">
+    <picture class="tent">
+        <source srcset="assets/images/desktop/-{{ enemy.indice }}" media="(min-width: 530px)">
+        <img class="tent" src="assets/images/mobile/{{ enemy.indice }}" alt="image enemy indice ">
+    </picture>
+    <div class="battlefield">
+        <div class="myChoice">
+            {% for troop in troops %}
+            <div class="oneTroop">
+                {% if troop.vigor == 3 or troop.vigor == 2 %}
+                <div class="troop yellow">
+                    {% elseif troop.vigor == 1 %}
+                <div class="troop red">
+                    {% elseif troop.vigor == 0 %}
+                <div class="troop black">
+                    {% else %}
+                <div class="troop green">
+                    {% endif %}
+                    {% if troop.vigor  == 0 %}
+                    <img class="troopImg" src={{ troop.image}} alt="asset troop">
+                    {% else %}
+                    <a href="fight?id={{ troop.type }}"><img class="troopImg" src={{ troop.image}} alt="asset troop"></a>
+                    {% endif %}
+                </div>
+                <p class="vigor">
+                    <img class="vigorImg" src={{ troop.imgVigor }} alt="asset vigor troop {{ troop.vigor}} / 5 ">
+                </p>
+            </div>
+            {% endfor %}
+        </div>
+        <h1 class="versus">- VS -</h1>
+        <div class="enemy">
+            <h3 class="troop green">?</h3>
+            <p><img class="vigorImg" src={{ enemy.imgVigor }} alt="asset vigor enemy {{ enemy.vigor }} / 5"></p>
+        </div>
+    </div>
+    <div class="score">
+        <h3>SCORE</h3>
+        <h1>~ {{ game.score }} ~</h1> 
+    </div>
+</section>
+{% endblock %}
+{% block javascript %}
+    <script src="assets/js/reset.js"></script>
+    {% if game.score == 0 %}
+            <script>scriptResetCastle0()</script>
+    {% endif %}
+{% endblock %}
