@@ -19,8 +19,8 @@ class AdminController extends AbstractController
         $info = $info->selectInfoAdmin();
 
         if ($_POST['password'] === $info['pass']) {
-            if ($info['pass'] === "dearinstructor"){
-                return $this->twig->render('Admin/firstpassword.html.twig'); 
+            if ($info['pass'] === "dearinstructor") {
+                return $this->twig->render('Admin/firstpassword.html.twig');
             }
         }
 
