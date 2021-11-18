@@ -170,7 +170,6 @@ nav {
     display: flex;
     justify-content: space-around;
     align-items: center;
-
 }
 
 .myChoice{
@@ -289,9 +288,27 @@ nav {
     align-items: center;
 }
 
-.enemy h1 {
+.enemy h3 {
     font-family: "Skranji";
     font-weight: 700;
     font-size: 10vmin;
     text-align: center;
+}
+
+.algo {
+    height: 12vmin;
+    width: 20vmin;
+    background: var(--font-troop);
+    font-family: 'Skranji';
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 1vmin;
+    border: 3px solid black;
+}
+
+.algo h2{
+    font-size: 2.5vmin;
+    font-weight: 400;
 }

@@ -19,7 +19,7 @@ h2 {
     color: var(--tutorial-text);
 }
 
-p{
+p, label{
     margin-top: 1vmin;
     font-size: 3vmin;
     text-align: justify;
@@ -169,7 +169,7 @@ hr{
     margin-right: auto;
 }
 
-.reset{
+.btn{
     display: flex;
     align-items:center;
     justify-content: center;
@@ -182,5 +182,19 @@ hr{
     border-radius: 1em;
     font-family: 'Skranji';
     color:var(--light-text);
-    font-size:medium;     
+    font-size:medium;
+}
+
+form, .form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+input {
+    font-size: 3vmin;
+    text-align: center;
+    font-family: "Roboto";
+    color: var(--tutorial-text);
 }
