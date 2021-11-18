@@ -23,8 +23,6 @@ class AdminController extends AbstractController
 
         if ($info['logged']) {
             (new SessionHandler())->sessionAdmin();
-        } else {
-            $logged = false;
         }
 
         header('Location: /');
