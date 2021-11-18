@@ -1,25 +1,3 @@
-nav {
-    padding: 1em 1em 0em 1em;
-    display: flex;
-    justify-content: space-between ;
-}
-
-.questionmark-button, .music-button {
-    width: 2.5em;
-    height: 2.5em;
-    border: solid var(--background-nbScore);
-    border-radius: 0.6em;
-    background-color: var(--greyBtn);
-}
-
-.questionmark-icon {
-    padding: 0.4em 0.2em 0.2em 0.7em;
-}
-
-.music-icon {
-    padding: 0.5em 0.2em 0.2em 0.5em;
-}
-
 /*background for mobile, portrait*/
 body {
     background-image: url("/assets/images/mobile/home_background.png");
