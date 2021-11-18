@@ -2,7 +2,7 @@
 {% block title %} Tutorial {{parent()}}{% endblock %}
 {% block stylesheet %}
 <link rel="stylesheet" href="../assets/css/tutorialandtos.css">
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
 {% endblock %}
 
 {% block content %}
@@ -19,7 +19,7 @@
     </div>
     {# Div which only displays the castle #}
     <picture class="castle">
-        <source id="castle" media="(max-width:650px)" srcset="/assets/images/mobile/troop_choice_castle.png">
+        <source media="(max-width:650px)" srcset="/assets/images/mobile/troop_choice_castle.png">
         <img id="castle" src="/assets/images/desktop/desktop_castle_troop_choice.png" alt="Castle">
     </picture>
         
