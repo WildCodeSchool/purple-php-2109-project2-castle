@@ -77,13 +77,13 @@ class Trooper
         if ($this->indice === null) {
             switch ($this->type) {
                 case (self::ARCHER):
-                    $this->indice = "../assets/images/mobile/tent-archer.png";
+                    $this->indice = "tent-archer.png";
                     break;
                 case (self::PIKEMAN):
-                    $this->indice = "../assets/images/mobile/tent-pikeman.png";
+                    $this->indice = "tent-pikeman.png";
                     break;
                 case (self::KNIGHT):
-                    $this->indice = "../assets/images/mobile/tent-knight.png";
+                    $this->indice = "tent-knight.png";
                     break;
             }
         }
