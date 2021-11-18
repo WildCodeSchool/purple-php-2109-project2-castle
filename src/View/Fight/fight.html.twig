@@ -48,11 +48,25 @@
             <p class="vigor">
             <img class="vigorImg" src={{ trooperPlayer.imgVigor }} alt="asset vigor troop {{ trooperPlayer.vigor}} / 5 ">
             </p>
+            {% if (session.admin) %}
+            <div class="algo">
+                <h2>💪:  {{ result.strengthPlayer - trooperPlayer.vigor * 6}}</h2>
+                <h2>🛡️: {{ trooperPlayer.vigor}} * 6 = {{ trooperPlayer.vigor * 6 }}</h2>
+                <h1>⚔️: {{ result.strengthPlayer }}</h1>
+            </div>
+            {% endif %}
         </div>
         <h1 class="versus">- VS -</h1>
         <div class="enemy">
             <p id="enemy" class="troop green"><img class="troopImg" src={{ enemy.image }} alt='asset enemy'></p>
             <p><img class="vigorImg" src={{ enemy.imgVigor }} alt="asset vigor enemy {{ enemy.vigor }} / 5"></p>
+            {% if (session.admin) %}
+            <div class="algo">
+                <h2>💪:  {{ result.strengthEnemy - enemy.vigor * 6}}</h2>
+                <h2>🛡️: {{ enemy.vigor}} * 6 = {{ enemy.vigor * 6 }}</h2>
+                <h1>⚔️: {{ result.strengthEnemy }}</h1>
+            </div>
+            {% endif %}
         </div>
     </div>
     <div class="score">
@@ -63,7 +77,6 @@
 {% endblock %}
 
 {% block javascript %}
-<script>let result = {{ result }};</script>
-
+<script>let result = {{ result.result }};</script>
 <script src="assets/js/timer.js"></script>
 {% endblock %}
