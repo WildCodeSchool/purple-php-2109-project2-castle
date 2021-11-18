@@ -28,4 +28,5 @@ CREATE TABLE `admin` (
   `logged` BOOL NOT NULL,
   PRIMARY KEY (`id`));
 
+
 INSERT INTO `admin` (`pass`, `logged`) VALUES ('dearinstructor' , false);
