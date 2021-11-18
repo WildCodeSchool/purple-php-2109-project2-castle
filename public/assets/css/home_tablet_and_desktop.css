@@ -35,6 +35,10 @@
         align-self: center;
         width: 8em;
     }
+    .button{
+        margin-left: 2em;
+    }
+
 }
 /*camp is displayed only for tablet landscape and desktop*/
 @media only screen and (min-width : 916px) {
@@ -59,3 +63,9 @@
         height: fit-content;
     }
 }
+
+.mainLogo {
+    display:none;
+}
+
+
