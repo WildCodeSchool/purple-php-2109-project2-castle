@@ -28,8 +28,8 @@
 </section>
 <section class="grass">
     <picture class="tent">
-        <source srcset="assets/images/desktop/battle_tent.png" media="(min-width: 530px)">
-        <img class="tent" src={{ enemy.indice }} alt="image enemy indice ">
+        <source srcset="assets/images/desktop/-{{ enemy.indice }}" media="(min-width: 530px)">
+        <img class="tent" src="assets/images/mobile/{{ enemy.indice }}" alt="image enemy indice ">
     </picture>    
     <div class="gameInfo">
         <h1 class="info">~ ROUND {{ round }} ~</h1>

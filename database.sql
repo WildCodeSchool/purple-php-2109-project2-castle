@@ -30,3 +30,4 @@ CREATE TABLE `admin` (
 
 
 INSERT INTO `admin` (`pass`, `logged`) VALUES ('dearinstructor' , false);
+
