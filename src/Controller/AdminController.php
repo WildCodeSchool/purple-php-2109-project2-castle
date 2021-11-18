@@ -4,7 +4,6 @@ namespace App\Controller;
 
 use App\Model\AdminManager;
 use App\Model\SessionHandler;
-use Gitonomy\Git\Admin;
 
 class AdminController extends AbstractController
 {
