@@ -11,26 +11,30 @@
 
 
 {% block content %}
-<nav class="nav-home">
-    {#to link a page, add url like example /file/page#}
-    <a href="termsofservice" class="questionmark-button"><img src="/assets/images/mobile/question_mark.png" alt="question mark" class="questionmark-icon"></a>
-    <a class="music-button" onclick="playPause()"><img src="/assets/images/mobile/mute_icon.png" alt="music icon" class="music-icon" id="music-button"></a>    
-</nav>
-<main>
-    <div class="castle">
-        <picture>
-            <source srcset="/assets/images/desktop/home_castle.png" media="(min-width: 530px)">
-            <img src="/assets/images/mobile/home_castle.png" alt="medieval castle cartoon drawing">
-        </picture> 
-    </div>   
-    <div class="defend-button"><a href="getready">DEFEND</a></div>
-    <div class="tutorial-button"><a href="tutorial">TUTORIAL</a></div>
-    {% if session.admin %}
-    <h1>Welcome my master [<a href="logout">Log Out</a>]</h1>
-    {% endif %}
-    <div class="logo"><img src="/assets/images/mobile/logo.png" alt="logo Defend The Castle"></div>
-    <div class="camp"><img src="/assets/images/desktop/battle_tent.png" alt="medieval war camp drawing"></div>
-</main>
+
+    <div class="navBlock">
+        <nav>
+            {#to link a page, add url like example /file/page#}
+            <a href="termsofservice" class="button"><img  src="/assets/images/mobile/question_mark.png" alt="question mark" ></a>
+            <a href="/"><img class="mainLogo" style="visibility:hidden" src="assets/images/mobile/logo.png" alt="Logo of Defend The Castle"></a>
+            <a class="button" onclick="playPause()"><img class="imageButton" src="/assets/images/mobile/mute_icon.png" alt="music icon" id="music-button"></a>    
+        </nav>
+    </div>
+    <main>
+        <div class="castle">
+            <picture>
+                <source srcset="/assets/images/desktop/home_castle.png" media="(min-width: 530px)">
+                <img src="/assets/images/mobile/home_castle.png" alt="medieval castle cartoon drawing">
+            </picture> 
+        </div>   
+        <div class="defend-button"><a href="getready">DEFEND</a></div>
+        <div class="tutorial-button"><a href="tutorial">TUTORIAL</a></div>
+        {% if session.admin %}
+        <h1>Welcome my master [<a href="logout">Log Out</a>]</h1>
+        {% endif %}
+        <div class="logo"><img src="/assets/images/mobile/logo.png" alt="logo Defend The Castle"></div>
+        <div class="camp"><img src="/assets/images/desktop/battle_tent.png" alt="medieval war camp drawing"></div>
+    </main>
     
 {% endblock %}
 
