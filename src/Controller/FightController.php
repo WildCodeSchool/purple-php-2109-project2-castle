@@ -32,6 +32,7 @@ class FightController extends AbstractController
             'troops' => $troops,
             'enemy' => $enemy,
             'game' => $game,
+            'session' => $_SESSION,
         ]);
     }
 
@@ -62,7 +63,7 @@ class FightController extends AbstractController
         $gameInfo = new CastleManager();
         $game = $gameInfo->selectGame();
         //calculation of the new score of the castle, impossible to be negative
-        $newScore = $game['score'] + $result;
+        $newScore = $game['score'] + $result['result'];
         //increment the round, return new score and round in database
         $round = $game['round'] + 1;
         $gameInfo->setScore($newScore);
@@ -81,6 +82,8 @@ class FightController extends AbstractController
             'newScore' => $newScore,
             'score' => $game['score'],
             'enemy' => $enemy,
+            'round' => $game['round'],
+            'session' => $_SESSION,
         ]);
     }
 }

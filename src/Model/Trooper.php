@@ -37,7 +37,7 @@ class Trooper
         return $bonus;
     }
     /*fight algorithm*/
-    public function fight(Trooper $enemy): int
+    public function fight(Trooper $enemy): array
     {
         $bonusPlayer = $this->bonus($enemy);
         $bonusEnemy = $enemy->bonus($this);
@@ -46,7 +46,12 @@ class Trooper
         (self::DEXTERITY * ($this->vigor / self::MAX_VIGOR));
         $attackEnemy = (rand(self::MIN_ATTACK, self::MAX_ATTACK) + $bonusEnemy) + (self::DEXTERITY);
         $result = $attackPlayer - $attackEnemy;
-        return $result;
+        $algo = [
+            'result' => $result,
+            'strengthPlayer' => $attackPlayer,
+            'strengthEnemy' => $attackEnemy,
+        ];
+        return $algo;
     }
     /*display image according to type*/
     public function getImage(): string
