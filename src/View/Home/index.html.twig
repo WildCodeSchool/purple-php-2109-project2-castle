@@ -12,6 +12,9 @@
 
 {% block content %}
     <div class="navBlock">
+        {% if session.admin %}
+        <h1>Welcome my master <a href='logout'>Log Out</a></h1>
+        {% endif %}
         <nav>
             {#to link a page, add url like example /file/page#}
             <a href="termsofservice" class="button"><img  src="/assets/images/mobile/question_mark.png" alt="question mark" ></a>
@@ -19,9 +22,6 @@
             <a class="button" onclick="playPause()"><img class="imageButton" src="/assets/images/mobile/mute_icon.png" alt="music icon" id="music-button"></a>    
         </nav>
     </div>
-    {% if session.admin %}
-    <h1>Welcome my master [<a href="logout">Log Out</a>]</h1>
-    {% endif %}
     <main>
         <div class="castle">
             <picture>
