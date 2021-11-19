@@ -41,7 +41,7 @@ class AdminController extends AbstractController
         $info = new AdminManager();
         $info = $info->selectInfoAdmin();
 
-        if (!empty($_POST['password'])) {
+        if (empty($_POST['newpassword'])) {
             header('Location: /');
             return '';
         } elseif ($info['pass'] === "dearinstructor") {
