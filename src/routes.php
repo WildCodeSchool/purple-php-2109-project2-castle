@@ -14,6 +14,7 @@ return [
     'tutorial' => ['TutorialController', 'index',],
     'termsofservice' => ['TermsOfServiceController', 'index',],
     'admin' => ['AdminController', 'password'],
+    'admin/newpass' => ['AdminController', 'newpassword'],
     'admin/pass' => ['AdminController', 'checking'],
     'logout' => ['AdminController', 'logOut'],
 ];
