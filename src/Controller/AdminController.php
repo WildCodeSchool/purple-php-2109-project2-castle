@@ -17,6 +17,11 @@ class AdminController extends AbstractController
         $info = new AdminManager();
         $info = $info->selectInfoAdmin();
 
+        if (empty($_POST['password'])) {
+            header('Location: /');
+            return '';
+        }
+
         if ($_POST['password'] === $info['pass']) {
             if ($info['pass'] === "dearinstructor") {
                 return $this->twig->render('Admin/firstpassword.html.twig');
@@ -33,10 +38,18 @@ class AdminController extends AbstractController
 
     public function newpassword()
     {
-        $crypt = password_hash($_POST['newpassword'], PASSWORD_DEFAULT);
-        (new AdminManager())->setNewPass($crypt);
-        header('Location: /admin');
-        return '';
+        $info = new AdminManager();
+        $info = $info->selectInfoAdmin();
+
+        if (!empty($_POST['password'])) {
+            header('Location: /');
+            return '';
+        } elseif ($info['pass'] === "dearinstructor") {
+            $crypt = password_hash($_POST['newpassword'], PASSWORD_DEFAULT);
+            (new AdminManager())->setNewPass($crypt);
+            header('Location: /admin');
+            return '';
+        }
     }
 
     public function logOut(): string
