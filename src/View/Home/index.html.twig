@@ -19,6 +19,9 @@
             <a class="button" onclick="playPause()"><img class="imageButton" src="/assets/images/mobile/mute_icon.png" alt="music icon" id="music-button"></a>    
         </nav>
     </div>
+    {% if session.admin %}
+    <h1>Welcome my master [<a href="logout">Log Out</a>]</h1>
+    {% endif %}
     <main>
         <div class="castle">
             <picture>
@@ -28,9 +31,6 @@
         </div>   
         <div class="defend-button"><a href="getready">DEFEND</a></div>
         <div class="tutorial-button"><a href="tutorial">RULES</a></div>
-        {% if session.admin %}
-        <h1>Welcome my master [<a href="logout">Log Out</a>]</h1>
-        {% endif %}
         <div class="logo"><img src="/assets/images/mobile/logo.png" alt="logo Defend The Castle"></div>
         <div class="camp"><img src="/assets/images/desktop/battle_tent.png" alt="medieval war camp drawing"></div>
     </main>    
