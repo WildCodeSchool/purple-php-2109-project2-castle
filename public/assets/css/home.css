@@ -23,6 +23,13 @@ main {
     height: auto;
 }
 
+h1 {
+    font-size: 1em;
+    font-family: 'roboto';
+    margin: 1em;
+    text-align: center;
+}
+
 .defend-button {
     grid-area: defend-button;
 }

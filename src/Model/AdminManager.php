@@ -12,4 +12,12 @@ class AdminManager extends AbstractManager
         $statement = $this->pdo->query("SELECT * FROM admin;");
         return $statement->fetch();
     }
+
+    public function setNewPass($crypt): void
+    {
+        $statement = $this->pdo->prepare("UPDATE admin SET pass = :pass WHERE user = :user;");
+        $statement->bindValue(':pass', $crypt, \PDO::PARAM_STR);
+        $statement->bindValue(':user', 'admin', \PDO::PARAM_STR);
+        $statement->execute();
+    }
 }
