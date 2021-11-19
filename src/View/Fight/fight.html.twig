@@ -51,7 +51,7 @@
             </p>
             {% if (session.admin) %}
             <div class="algo">
-                <h2>💪:  {{ result.strengthPlayer - trooperPlayer.vigor * 6}}</h2>
+                <h2>💪: {{ result.strengthPlayer - trooperPlayer.vigor * 6}}</h2>
                 <h2>🛡️: {{ trooperPlayer.vigor}} * 6 = {{ trooperPlayer.vigor * 6 }}</h2>
                 <h1>⚔️: {{ result.strengthPlayer }}</h1>
             </div>
@@ -63,7 +63,7 @@
             <p><img class="vigorImg" src={{ enemy.imgVigor }} alt="asset vigor enemy {{ enemy.vigor }} / 5"></p>
             {% if (session.admin) %}
             <div class="algo">
-                <h2>💪:  {{ result.strengthEnemy - enemy.vigor * 6}}</h2>
+                <h2>💪: {{ result.strengthEnemy - enemy.vigor * 6}}</h2>
                 <h2>🛡️: {{ enemy.vigor}} * 6 = {{ enemy.vigor * 6 }}</h2>
                 <h1>⚔️: {{ result.strengthEnemy }}</h1>
             </div>
